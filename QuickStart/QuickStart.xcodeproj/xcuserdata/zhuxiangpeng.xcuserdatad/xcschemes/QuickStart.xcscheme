@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69B583E81D817DB700653350"
-               BuildableName = "QuickStart.app"
+               BlueprintIdentifier = "69FFA7431D87EA73001FD4F4"
+               BuildableName = "QuickStart.framework"
                BlueprintName = "QuickStart"
                ReferencedContainer = "container:QuickStart.xcodeproj">
             </BuildableReference>
@@ -32,8 +32,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69B583E81D817DB700653350"
-            BuildableName = "QuickStart.app"
+            BlueprintIdentifier = "69FFA7431D87EA73001FD4F4"
+            BuildableName = "QuickStart.framework"
             BlueprintName = "QuickStart"
             ReferencedContainer = "container:QuickStart.xcodeproj">
          </BuildableReference>
@@ -55,8 +55,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69B583E81D817DB700653350"
-            BuildableName = "QuickStart.app"
+            BlueprintIdentifier = "69FFA7431D87EA73001FD4F4"
+            BuildableName = "QuickStart.framework"
             BlueprintName = "QuickStart"
             ReferencedContainer = "container:QuickStart.xcodeproj">
          </BuildableReference>
@@ -74,8 +74,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69B583E81D817DB700653350"
-            BuildableName = "QuickStart.app"
+            BlueprintIdentifier = "69FFA7431D87EA73001FD4F4"
+            BuildableName = "QuickStart.framework"
             BlueprintName = "QuickStart"
             ReferencedContainer = "container:QuickStart.xcodeproj">
          </BuildableReference>
