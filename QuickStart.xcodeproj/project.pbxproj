@@ -10,6 +10,8 @@
 		69FFA7EB1D87F6C8001FD4F4 /* QuickStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FFA7E11D87F6C8001FD4F4 /* QuickStart.framework */; };
 		69FFA7F01D87F6C8001FD4F4 /* QuickStartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FFA7EF1D87F6C8001FD4F4 /* QuickStartTests.swift */; };
 		69FFA7F21D87F6C8001FD4F4 /* QuickStart.h in Headers */ = {isa = PBXBuildFile; fileRef = 69FFA7E41D87F6C8001FD4F4 /* QuickStart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69FFA81A1D87F927001FD4F4 /* MVCCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FFA8191D87F927001FD4F4 /* MVCCore.swift */; };
+		69FFA81B1D87F927001FD4F4 /* MVCCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FFA8191D87F927001FD4F4 /* MVCCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		69FFA7EA1D87F6C8001FD4F4 /* QuickStartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickStartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FFA7EF1D87F6C8001FD4F4 /* QuickStartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStartTests.swift; sourceTree = "<group>"; };
 		69FFA7F11D87F6C8001FD4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69FFA8191D87F927001FD4F4 /* MVCCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			children = (
 				69FFA7E41D87F6C8001FD4F4 /* QuickStart.h */,
 				69FFA7E51D87F6C8001FD4F4 /* Info.plist */,
+				69FFA8191D87F927001FD4F4 /* MVCCore.swift */,
 			);
 			path = QuickStart;
 			sourceTree = "<group>";
@@ -148,6 +152,7 @@
 				TargetAttributes = {
 					69FFA7E01D87F6C8001FD4F4 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					69FFA7E91D87F6C8001FD4F4 = {
@@ -196,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69FFA81A1D87F927001FD4F4 /* MVCCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69FFA7F01D87F6C8001FD4F4 /* QuickStartTests.swift in Sources */,
+				69FFA81B1D87F927001FD4F4 /* MVCCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +327,7 @@
 		69FFA7F61D87F6C8001FD4F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -331,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kxsq.QuickStart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -338,6 +347,7 @@
 		69FFA7F71D87F6C8001FD4F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +366,7 @@
 		69FFA7F91D87F6C8001FD4F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = QuickStartTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kxsq.QuickStartTests;
@@ -367,6 +378,7 @@
 		69FFA7FA1D87F6C8001FD4F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = QuickStartTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kxsq.QuickStartTests;
@@ -394,6 +406,7 @@
 				69FFA7F71D87F6C8001FD4F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69FFA7F81D87F6C8001FD4F4 /* Build configuration list for PBXNativeTarget "QuickStartTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +415,7 @@
 				69FFA7FA1D87F6C8001FD4F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
