@@ -64,9 +64,7 @@ class ViewController: UIViewController {
             return nil
         }
         if result {
-            for p in resp.data {
-                print(p)
-            }
+            ///
         }
     }
 
