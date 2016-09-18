@@ -39,7 +39,7 @@ extension UIView {
 }
 
 /// 可扩大响应范围的UIView
-open class QSTouchEdgeView: UIView, QSViewTouchEdgeExtend {
+open class QSTouchEdgeView: QSView, QSViewTouchEdgeExtend {
     /// 扩大的边界
     public var responseInsets = UIEdgeInsets.zero
     
@@ -49,7 +49,7 @@ open class QSTouchEdgeView: UIView, QSViewTouchEdgeExtend {
 }
 
 /// 可扩大响应范围的UIScrollView
-open class QSTouchEdgeScrollView: UIScrollView, QSViewTouchEdgeExtend {
+open class QSTouchEdgeScrollView: QSScrollView, QSViewTouchEdgeExtend {
     /// 扩大的边界
     public var responseInsets = UIEdgeInsets.zero
     
@@ -59,7 +59,7 @@ open class QSTouchEdgeScrollView: UIScrollView, QSViewTouchEdgeExtend {
 }
 
 /// 可扩大响应范围的UILabel
-open class QSTouchEdgeLabel: UILabel, QSViewTouchEdgeExtend {
+open class QSTouchEdgeLabel: QSLabel, QSViewTouchEdgeExtend {
     /// 扩大的边界
     public var responseInsets = UIEdgeInsets.zero
     
@@ -69,7 +69,7 @@ open class QSTouchEdgeLabel: UILabel, QSViewTouchEdgeExtend {
 }
 
 /// 可扩大响应范围的UIButton
-open class QSTouchEdgeButton: UIButton, QSViewTouchEdgeExtend {
+open class QSTouchEdgeButton: QSButton, QSViewTouchEdgeExtend {
     /// 扩大的边界
     public var responseInsets = UIEdgeInsets.zero
     
@@ -79,7 +79,7 @@ open class QSTouchEdgeButton: UIButton, QSViewTouchEdgeExtend {
 }
 
 /// 可扩大响应范围的UIButton
-open class QSTouchEdgeImageView: UIImageView, QSViewTouchEdgeExtend {
+open class QSTouchEdgeImageView: QSImageView, QSViewTouchEdgeExtend {
     /// 扩大的边界
     public var responseInsets = UIEdgeInsets.zero
     

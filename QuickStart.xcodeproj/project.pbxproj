@@ -27,6 +27,16 @@
 		696C21E81D8E3D850056F2D3 /* UIViewController+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; };
 		696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A939678A1D8EE5E300EF6BF7 /* QSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967891D8EE5E300EF6BF7 /* QSView.swift */; };
+		A939678C1D8EE60000EF6BF7 /* QSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678B1D8EE60000EF6BF7 /* QSControl.swift */; };
+		A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678D1D8EE62200EF6BF7 /* QSScrollView.swift */; };
+		A93967901D8EE63300EF6BF7 /* QSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678F1D8EE63300EF6BF7 /* QSTableView.swift */; };
+		A93967921D8EE64D00EF6BF7 /* QSCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967911D8EE64D00EF6BF7 /* QSCollectionView.swift */; };
+		A93967941D8EE66100EF6BF7 /* QSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967931D8EE66100EF6BF7 /* QSLabel.swift */; };
+		A93967961D8EE66E00EF6BF7 /* QSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967951D8EE66E00EF6BF7 /* QSButton.swift */; };
+		A93967981D8EE67D00EF6BF7 /* QSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967971D8EE67D00EF6BF7 /* QSTextView.swift */; };
+		A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967991D8EE68C00EF6BF7 /* QSTextField.swift */; };
+		A939679C1D8EE6E400EF6BF7 /* QSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939679B1D8EE6E400EF6BF7 /* QSImageView.swift */; };
 		A93C6FA01D8C3F0200BA48AD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; };
 		A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FC01D8D76F800BA48AD /* UIApplication+Extension.swift */; };
 		A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FC11D8D76F800BA48AD /* UIColor+Extension.swift */; };
@@ -59,6 +69,16 @@
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69FFA7E11D87F6C8001FD4F4 /* QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FFA7E51D87F6C8001FD4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A93967891D8EE5E300EF6BF7 /* QSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSView.swift; sourceTree = "<group>"; };
+		A939678B1D8EE60000EF6BF7 /* QSControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSControl.swift; sourceTree = "<group>"; };
+		A939678D1D8EE62200EF6BF7 /* QSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSScrollView.swift; sourceTree = "<group>"; };
+		A939678F1D8EE63300EF6BF7 /* QSTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSTableView.swift; sourceTree = "<group>"; };
+		A93967911D8EE64D00EF6BF7 /* QSCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSCollectionView.swift; sourceTree = "<group>"; };
+		A93967931D8EE66100EF6BF7 /* QSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSLabel.swift; sourceTree = "<group>"; };
+		A93967951D8EE66E00EF6BF7 /* QSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSButton.swift; sourceTree = "<group>"; };
+		A93967971D8EE67D00EF6BF7 /* QSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSTextView.swift; sourceTree = "<group>"; };
+		A93967991D8EE68C00EF6BF7 /* QSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSTextField.swift; sourceTree = "<group>"; };
+		A939679B1D8EE6E400EF6BF7 /* QSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImageView.swift; sourceTree = "<group>"; };
 		A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A93C6FC01D8D76F800BA48AD /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		A93C6FC11D8D76F800BA48AD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -114,6 +134,16 @@
 			isa = PBXGroup;
 			children = (
 				696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */,
+				A93967891D8EE5E300EF6BF7 /* QSView.swift */,
+				A939678B1D8EE60000EF6BF7 /* QSControl.swift */,
+				A939678D1D8EE62200EF6BF7 /* QSScrollView.swift */,
+				A939678F1D8EE63300EF6BF7 /* QSTableView.swift */,
+				A93967911D8EE64D00EF6BF7 /* QSCollectionView.swift */,
+				A93967931D8EE66100EF6BF7 /* QSLabel.swift */,
+				A93967951D8EE66E00EF6BF7 /* QSButton.swift */,
+				A93967971D8EE67D00EF6BF7 /* QSTextView.swift */,
+				A93967991D8EE68C00EF6BF7 /* QSTextField.swift */,
+				A939679B1D8EE6E400EF6BF7 /* QSImageView.swift */,
 			);
 			path = SystemOverride;
 			sourceTree = "<group>";
@@ -332,18 +362,28 @@
 				A93C6FD01D8D76F800BA48AD /* UIScreen+Extension.swift in Sources */,
 				A93C6FEA1D8D7B0C00BA48AD /* NSDate+Extension.swift in Sources */,
 				A9D97E071D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift in Sources */,
+				A93967901D8EE63300EF6BF7 /* QSTableView.swift in Sources */,
 				A93C6FE51D8D7B0C00BA48AD /* Dictionary+Extension.swift in Sources */,
+				A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */,
 				A93C6FCE1D8D76F800BA48AD /* UIImage+Extension.swift in Sources */,
 				A93C6FE91D8D7B0C00BA48AD /* NSBundle+Extension.swift in Sources */,
 				A93C6FEB1D8D7B0C00BA48AD /* String+Extension.swift in Sources */,
 				A93C6FD31D8D76F800BA48AD /* UIView+Extension.swift in Sources */,
+				A939679C1D8EE6E400EF6BF7 /* QSImageView.swift in Sources */,
+				A939678A1D8EE5E300EF6BF7 /* QSView.swift in Sources */,
+				A93967981D8EE67D00EF6BF7 /* QSTextView.swift in Sources */,
 				A93C6FE61D8D7B0C00BA48AD /* Functions.swift in Sources */,
 				A9D97E051D8A4ABD00C4E3F6 /* MVCCore.swift in Sources */,
+				A93967921D8EE64D00EF6BF7 /* QSCollectionView.swift in Sources */,
+				A939678C1D8EE60000EF6BF7 /* QSControl.swift in Sources */,
 				A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */,
 				696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */,
 				A93C6FD61D8D77C100BA48AD /* SandboxDirectoryManager.swift in Sources */,
 				A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */,
+				A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
+				A93967961D8EE66E00EF6BF7 /* QSButton.swift in Sources */,
+				A93967941D8EE66100EF6BF7 /* QSLabel.swift in Sources */,
 				A93C6FE81D8D7B0C00BA48AD /* NSAttributedString+Extension.swift in Sources */,
 				A93C6FE71D8D7B0C00BA48AD /* Json+Extension.swift in Sources */,
 				A9D4D8901D8AA1180039E06D /* QSHttpRequest.swift in Sources */,
