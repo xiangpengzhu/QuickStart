@@ -18,7 +18,7 @@ extension Bundle {
      
      - returns: nib对象
      */
-    func nibObject(_ nibName: String, index: Int) -> Any? {
+    public func nibObject(_ nibName: String, index: Int) -> Any? {
         if let array = self.loadNibNamed(nibName, owner: nil, options: nil) {
             if (index >= 0 && index < array.count) {
                 return array[index];

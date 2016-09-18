@@ -21,7 +21,7 @@ extension UILabel {
      
      - returns: UILabel实例
      */
-    convenience init(color: UIColor, font: UIFont, textAlignment: NSTextAlignment = .left, useAutoLayout: Bool = false, multiLine: Bool = false) {
+    public convenience init(color: UIColor, font: UIFont, textAlignment: NSTextAlignment = .left, useAutoLayout: Bool = false, multiLine: Bool = false) {
         self.init(frame: CGRect.zero)
         self.backgroundColor = UIColor.clear
         self.textAlignment = textAlignment

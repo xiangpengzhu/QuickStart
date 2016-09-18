@@ -12,7 +12,7 @@ import UIKit
 extension UIDevice {
 
     /// 是否是ipad
-    var isIpad: Bool {
+    public var isIpad: Bool {
         get {
             return self.userInterfaceIdiom == UIUserInterfaceIdiom.pad
         }

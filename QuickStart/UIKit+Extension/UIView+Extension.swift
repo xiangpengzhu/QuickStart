@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    var screenshotImage: UIImage? {
+    public var screenshotImage: UIImage? {
         var image: UIImage?        
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0.0)
         if let context = UIGraphicsGetCurrentContext() {
@@ -19,5 +19,20 @@ extension UIView {
         }
         UIGraphicsEndImageContext()
         return image
+    }
+    
+    public var currentViewController: UIViewController? {
+        
+        var next = self.superview
+        while next != nil {
+            let responder = next?.next
+            if let responder = responder , responder is UIViewController {
+                return responder as? UIViewController
+            }
+            
+            next = next?.superview
+        }
+        
+        return nil
     }
 }

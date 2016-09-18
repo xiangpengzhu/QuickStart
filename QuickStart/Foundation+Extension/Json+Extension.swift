@@ -9,7 +9,7 @@
 import Foundation
 
 extension NSArray {
-    var jsonString: String? {
+    public var jsonString: String? {
         if JSONSerialization.isValidJSONObject(self) {
             do {
                 let data = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions(rawValue: 0))
@@ -26,7 +26,7 @@ extension NSArray {
 }
 
 extension NSDictionary {
-    var jsonString: String? {
+    public var jsonString: String? {
         if JSONSerialization.isValidJSONObject(self) {
             do {
                 let data = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions(rawValue: 0))

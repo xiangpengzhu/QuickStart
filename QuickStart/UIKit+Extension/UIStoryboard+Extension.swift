@@ -16,7 +16,7 @@ extension UIStoryboard {
      
      - returns: ViewController的一个实例
      */
-    static func viewControllerWithStoryboardId(_ sid: String, storyBoardName: String = "Main") -> UIViewController? {
+    public static func viewControllerWithStoryboardId(_ sid: String, storyBoardName: String = "Main") -> UIViewController? {
         let sb = UIStoryboard(name: storyBoardName, bundle: nil)
         return sb.instantiateViewController(withIdentifier: sid)
     }

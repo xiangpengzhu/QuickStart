@@ -27,7 +27,7 @@ extension UIViewController {
     /**
      在界面中添加loading，注意loading会加在view的最上层
      */
-    func startLoading() {
+    public func startLoading() {
         loadingView?.removeFromSuperview()
         
         
@@ -47,7 +47,7 @@ extension UIViewController {
     /**
      隐藏func startLoading() 显示的loading
      */
-    func stopLoading() {
+    public func stopLoading() {
         loadingView?.removeFromSuperview()
         loadingView = nil
     }

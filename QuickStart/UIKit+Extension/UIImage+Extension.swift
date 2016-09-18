@@ -19,7 +19,7 @@ extension UIImage {
      
      - returns: 图片
      */
-    convenience init?(color: UIColor, rect: CGRect) {
+    public convenience init?(color: UIColor, rect: CGRect) {
         
         UIGraphicsBeginImageContext(rect.size);
         let context = UIGraphicsGetCurrentContext();
@@ -40,7 +40,7 @@ extension UIImage {
      
      - returns: 图片
      */
-    convenience init?(color: UIColor) {
+    public convenience init?(color: UIColor) {
         self.init(color: color, rect: CGRect(x: 0, y: 0, width: 1.0, height: 1.0))
     }
     
@@ -50,7 +50,7 @@ extension UIImage {
      
      - returns: 图片
      */
-    func renderingImage() -> UIImage {
+    public func renderingImage() -> UIImage {
         return self.withRenderingMode(.alwaysTemplate)
     }
 }

@@ -18,7 +18,7 @@ extension UIScreen {
      
      - returns: 本设备对应的大小
      */
-    func systemPixel(_ pixel: CGFloat) -> CGFloat {
+    public func systemPixel(_ pixel: CGFloat) -> CGFloat {
         let origin: CGFloat = 320.0;
         let screen = self.bounds.size.width;
         return pixel * screen / origin;

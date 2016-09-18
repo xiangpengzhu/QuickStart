@@ -24,7 +24,7 @@ extension UIApplication {
     }
     
     /// app显示名称
-    var appDisplayName: String {
+    public var appDisplayName: String {
         get {
             guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {return ""}
             guard let dic = NSDictionary(contentsOfFile: path) else {return ""}
@@ -35,7 +35,7 @@ extension UIApplication {
     }
     
     /// app bundle id
-    var appBundleId: String {
+    public var appBundleId: String {
         get {
             guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {return ""}
             guard let dic = NSDictionary(contentsOfFile: path) else {return ""}
@@ -46,7 +46,7 @@ extension UIApplication {
     }
     
     /// app bundle name
-    var appBundleName: String {
+    public var appBundleName: String {
         get {
             guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {return ""}
             guard let dic = NSDictionary(contentsOfFile: path) else {return ""}
