@@ -25,6 +25,8 @@
 		696C21E51D8E3D850056F2D3 /* UIStoryboard+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FC71D8D76F800BA48AD /* UIStoryboard+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21E71D8E3D850056F2D3 /* UIView+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FC91D8D76F800BA48AD /* UIView+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21E81D8E3D850056F2D3 /* UIViewController+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; };
+		696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		A93C6FA01D8C3F0200BA48AD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; };
 		A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FC01D8D76F800BA48AD /* UIApplication+Extension.swift */; };
 		A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FC11D8D76F800BA48AD /* UIColor+Extension.swift */; };
@@ -54,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
+		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69FFA7E11D87F6C8001FD4F4 /* QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FFA7E51D87F6C8001FD4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -107,6 +110,14 @@
 			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
+		696C21E91D8E44F70056F2D3 /* SystemOverride */ = {
+			isa = PBXGroup;
+			children = (
+				696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */,
+			);
+			path = SystemOverride;
+			sourceTree = "<group>";
+		};
 		69FFA7D71D87F6C8001FD4F4 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +138,7 @@
 		69FFA7E31D87F6C8001FD4F4 /* QuickStart */ = {
 			isa = PBXGroup;
 			children = (
+				696C21E91D8E44F70056F2D3 /* SystemOverride */,
 				696C21D31D8E398D0056F2D3 /* SystemModules */,
 				A93C6FD71D8D7B0C00BA48AD /* Foundation+Extension */,
 				A93C6FD41D8D778F00BA48AD /* Utilitys */,
@@ -239,6 +251,7 @@
 				696C21E51D8E3D850056F2D3 /* UIStoryboard+Extension.swift in Headers */,
 				696C21E71D8E3D850056F2D3 /* UIView+Extension.swift in Headers */,
 				696C21E81D8E3D850056F2D3 /* UIViewController+Extension.swift in Headers */,
+				696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +340,7 @@
 				A93C6FE61D8D7B0C00BA48AD /* Functions.swift in Sources */,
 				A9D97E051D8A4ABD00C4E3F6 /* MVCCore.swift in Sources */,
 				A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */,
+				696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */,
 				A93C6FD61D8D77C100BA48AD /* SandboxDirectoryManager.swift in Sources */,
 				A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
