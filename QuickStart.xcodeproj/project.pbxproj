@@ -37,6 +37,16 @@
 		A93967981D8EE67D00EF6BF7 /* QSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967971D8EE67D00EF6BF7 /* QSTextView.swift */; };
 		A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967991D8EE68C00EF6BF7 /* QSTextField.swift */; };
 		A939679C1D8EE6E400EF6BF7 /* QSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939679B1D8EE6E400EF6BF7 /* QSImageView.swift */; };
+		A939679D1D8EEA3400EF6BF7 /* QSView.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93967891D8EE5E300EF6BF7 /* QSView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A939679E1D8EEA3400EF6BF7 /* QSControl.swift in Headers */ = {isa = PBXBuildFile; fileRef = A939678B1D8EE60000EF6BF7 /* QSControl.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A939679F1D8EEA3400EF6BF7 /* QSScrollView.swift in Headers */ = {isa = PBXBuildFile; fileRef = A939678D1D8EE62200EF6BF7 /* QSScrollView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A01D8EEA3400EF6BF7 /* QSTableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = A939678F1D8EE63300EF6BF7 /* QSTableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A11D8EEA3400EF6BF7 /* QSCollectionView.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93967911D8EE64D00EF6BF7 /* QSCollectionView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A21D8EEA3400EF6BF7 /* QSLabel.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93967931D8EE66100EF6BF7 /* QSLabel.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A31D8EEA3400EF6BF7 /* QSButton.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93967951D8EE66E00EF6BF7 /* QSButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A41D8EEA3400EF6BF7 /* QSTextView.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93967971D8EE67D00EF6BF7 /* QSTextView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A51D8EEA3400EF6BF7 /* QSTextField.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93967991D8EE68C00EF6BF7 /* QSTextField.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93967A61D8EEA3400EF6BF7 /* QSImageView.swift in Headers */ = {isa = PBXBuildFile; fileRef = A939679B1D8EE6E400EF6BF7 /* QSImageView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		A93C6FA01D8C3F0200BA48AD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; };
 		A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FC01D8D76F800BA48AD /* UIApplication+Extension.swift */; };
 		A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FC11D8D76F800BA48AD /* UIColor+Extension.swift */; };
@@ -281,6 +291,16 @@
 				696C21E51D8E3D850056F2D3 /* UIStoryboard+Extension.swift in Headers */,
 				696C21E71D8E3D850056F2D3 /* UIView+Extension.swift in Headers */,
 				696C21E81D8E3D850056F2D3 /* UIViewController+Extension.swift in Headers */,
+				A939679D1D8EEA3400EF6BF7 /* QSView.swift in Headers */,
+				A939679E1D8EEA3400EF6BF7 /* QSControl.swift in Headers */,
+				A939679F1D8EEA3400EF6BF7 /* QSScrollView.swift in Headers */,
+				A93967A01D8EEA3400EF6BF7 /* QSTableView.swift in Headers */,
+				A93967A11D8EEA3400EF6BF7 /* QSCollectionView.swift in Headers */,
+				A93967A21D8EEA3400EF6BF7 /* QSLabel.swift in Headers */,
+				A93967A31D8EEA3400EF6BF7 /* QSButton.swift in Headers */,
+				A93967A41D8EEA3400EF6BF7 /* QSTextView.swift in Headers */,
+				A93967A51D8EEA3400EF6BF7 /* QSTextField.swift in Headers */,
+				A93967A61D8EEA3400EF6BF7 /* QSImageView.swift in Headers */,
 				696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
