@@ -11,16 +11,20 @@ import QuickStart
 
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak private var label: UILabel!
+    @IBOutlet weak private var button: UIButton!
+    @IBOutlet weak private var textField: UITextField!
+    @IBOutlet weak private var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        QSDynamicFontManager.default.bind(dynamicFontView: label, dynamicFontSytle: .body)
+        QSDynamicFontManager.default.bind(dynamicFontView: button, dynamicFontSytle: .subheadline)
+        QSDynamicFontManager.default.bind(dynamicFontView: textField, dynamicFontSytle: .headline)
+        QSDynamicFontManager.default.bind(dynamicFontView: textView, dynamicFontSytle: .footnote)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

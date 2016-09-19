@@ -27,6 +27,8 @@
 		696C21E81D8E3D850056F2D3 /* UIViewController+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; };
 		696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; };
+		69A961AC1D8FDA5200CFB273 /* QSDynamicFontManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		A939678A1D8EE5E300EF6BF7 /* QSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967891D8EE5E300EF6BF7 /* QSView.swift */; };
 		A939678C1D8EE60000EF6BF7 /* QSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678B1D8EE60000EF6BF7 /* QSControl.swift */; };
 		A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678D1D8EE62200EF6BF7 /* QSScrollView.swift */; };
@@ -77,6 +79,7 @@
 /* Begin PBXFileReference section */
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
+		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
 		69FFA7E11D87F6C8001FD4F4 /* QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FFA7E51D87F6C8001FD4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93967891D8EE5E300EF6BF7 /* QSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSView.swift; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				A93C6FD51D8D77C100BA48AD /* SandboxDirectoryManager.swift */,
+				69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */,
 			);
 			path = Utilitys;
 			sourceTree = "<group>";
@@ -302,6 +306,7 @@
 				A93967A51D8EEA3400EF6BF7 /* QSTextField.swift in Headers */,
 				A93967A61D8EEA3400EF6BF7 /* QSImageView.swift in Headers */,
 				696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */,
+				69A961AC1D8FDA5200CFB273 /* QSDynamicFontManager.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +390,7 @@
 				A93967901D8EE63300EF6BF7 /* QSTableView.swift in Sources */,
 				A93C6FE51D8D7B0C00BA48AD /* Dictionary+Extension.swift in Sources */,
 				A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */,
+				69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */,
 				A93C6FCE1D8D76F800BA48AD /* UIImage+Extension.swift in Sources */,
 				A93C6FE91D8D7B0C00BA48AD /* NSBundle+Extension.swift in Sources */,
 				A93C6FEB1D8D7B0C00BA48AD /* String+Extension.swift in Sources */,
