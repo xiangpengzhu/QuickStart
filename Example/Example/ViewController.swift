@@ -8,23 +8,25 @@
 
 import UIKit
 import QuickStart
+import CoreImage
 
 
 class ViewController: UIViewController {
     
-    
-    @IBOutlet weak private var label: UILabel!
-    @IBOutlet weak private var button: UIButton!
-    @IBOutlet weak private var textField: UITextField!
-    @IBOutlet weak private var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        QSDynamicFontManager.default.bind(dynamicFontView: label, dynamicFontSytle: .body)
-        QSDynamicFontManager.default.bind(dynamicFontView: button, dynamicFontSytle: .subheadline)
-        QSDynamicFontManager.default.bind(dynamicFontView: textField, dynamicFontSytle: .headline)
-        QSDynamicFontManager.default.bind(dynamicFontView: textView, dynamicFontSytle: .footnote)
+
+        let image = #imageLiteral(resourceName: "1")
+        
+        /*
+        if let ciImage = CIImage(image: image) {
+            let outImage = blur(blurName: Blur.CIGaussianBlur.rawValue, radius: 100)(ciImage)
+            let image = UIImage(ciImage: outImage)
+            imageView.image = image
+        }
+ */
     }
 }
 
