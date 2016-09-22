@@ -14,6 +14,7 @@
 		A93F11B31D8B8B2900F688A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93F11B11D8B8B2900F688A4 /* LaunchScreen.storyboard */; };
 		A93F11BB1D8B8B4900F688A4 /* QuickStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93F11BA1D8B8B4900F688A4 /* QuickStart.framework */; };
 		A93F11BC1D8B8B4900F688A4 /* QuickStart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A93F11BA1D8B8B4900F688A4 /* QuickStart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A98C33CB1D9415F700C2FC99 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C33CA1D9415F700C2FC99 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		A93F11B21D8B8B2900F688A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A93F11B41D8B8B2900F688A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93F11BA1D8B8B4900F688A4 /* QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98C33CA1D9415F700C2FC99 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				A93F11AF1D8B8B2900F688A4 /* Assets.xcassets */,
 				A93F11B11D8B8B2900F688A4 /* LaunchScreen.storyboard */,
 				A93F11B41D8B8B2900F688A4 /* Info.plist */,
+				A98C33CA1D9415F700C2FC99 /* SecondViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98C33CB1D9415F700C2FC99 /* SecondViewController.swift in Sources */,
 				A93F11AB1D8B8B2900F688A4 /* ViewController.swift in Sources */,
 				A93F11A91D8B8B2900F688A4 /* AppDelegate.swift in Sources */,
 			);

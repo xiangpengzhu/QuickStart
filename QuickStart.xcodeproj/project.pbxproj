@@ -10,7 +10,6 @@
 		691400B41D929BD30039F56F /* CoreImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; };
 		691400B61D929BE50039F56F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691400B51D929BE50039F56F /* CoreImage.framework */; };
 		691400B71D929FBD0039F56F /* CoreImageFilter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		6936AF761D93DB9200C20A76 /* QSPageTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6936AF751D93DB9200C20A76 /* QSPageTransitionManager.swift */; };
 		696C21D61D8E3D850056F2D3 /* Dictionary+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDB1D8D7B0C00BA48AD /* Dictionary+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D71D8E3D850056F2D3 /* Functions.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDC1D8D7B0C00BA48AD /* Functions.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D81D8E3D850056F2D3 /* Json+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDD1D8D7B0C00BA48AD /* Json+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,18 +71,17 @@
 		A93C6FEA1D8D7B0C00BA48AD /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FE01D8D7B0C00BA48AD /* NSDate+Extension.swift */; };
 		A93C6FEB1D8D7B0C00BA48AD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C6FE11D8D7B0C00BA48AD /* String+Extension.swift */; };
 		A93C6FEF1D8D7DD800BA48AD /* QuickStart.h in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A98C33C81D94107400C2FC99 /* QSPageTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C33C71D94107400C2FC99 /* QSPageTransitionManager.swift */; };
+		A98C33C91D94156900C2FC99 /* QSPageTransitionManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = A98C33C71D94107400C2FC99 /* QSPageTransitionManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9D4D8901D8AA1180039E06D /* QSHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */; };
 		A9D4D8B01D8AADC80039E06D /* QSHttpRequest.swift in Headers */ = {isa = PBXBuildFile; fileRef = A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9D97E051D8A4ABD00C4E3F6 /* MVCCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D97E041D8A4ABD00C4E3F6 /* MVCCore.swift */; };
 		A9D97E071D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D97E061D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift */; };
 		A9D97E0A1D8A4D3F00C4E3F6 /* QSDictionaryAutoParseModel.swift in Headers */ = {isa = PBXBuildFile; fileRef = A9D97E061D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9D97E0B1D8A4D4500C4E3F6 /* MVCCore.swift in Headers */ = {isa = PBXBuildFile; fileRef = A9D97E041D8A4ABD00C4E3F6 /* MVCCore.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		691400B31D929BD30039F56F /* CoreImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageFilter.swift; sourceTree = "<group>"; };
 		691400B51D929BE50039F56F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		6936AF751D93DB9200C20A76 /* QSPageTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSPageTransitionManager.swift; sourceTree = "<group>"; };
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
@@ -118,8 +116,8 @@
 		A93C6FE01D8D7B0C00BA48AD /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		A93C6FE11D8D7B0C00BA48AD /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickStart.h; sourceTree = "<group>"; };
+		A98C33C71D94107400C2FC99 /* QSPageTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSPageTransitionManager.swift; sourceTree = "<group>"; };
 		A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSHttpRequest.swift; sourceTree = "<group>"; };
-		A9D97E041D8A4ABD00C4E3F6 /* MVCCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCCore.swift; sourceTree = "<group>"; };
 		A9D97E061D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDictionaryAutoParseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +194,6 @@
 				A93C6F9E1D8C3EEB00BA48AD /* UIKit+Extension */,
 				A9D4D88E1D8AA1050039E06D /* HttpRequest */,
 				A9D97E021D8A4ABD00C4E3F6 /* JsonParse */,
-				A9D97E031D8A4ABD00C4E3F6 /* MVCCore */,
 				69FFA7E51D87F6C8001FD4F4 /* Info.plist */,
 				A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */,
 			);
@@ -223,6 +220,7 @@
 		A93C6FD41D8D778F00BA48AD /* Utilitys */ = {
 			isa = PBXGroup;
 			children = (
+				A98C33C71D94107400C2FC99 /* QSPageTransitionManager.swift */,
 				A93C6FD51D8D77C100BA48AD /* SandboxDirectoryManager.swift */,
 				69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */,
 				691400B31D929BD30039F56F /* CoreImageFilter.swift */,
@@ -268,15 +266,6 @@
 			path = JsonParse;
 			sourceTree = "<group>";
 		};
-		A9D97E031D8A4ABD00C4E3F6 /* MVCCore */ = {
-			isa = PBXGroup;
-			children = (
-				A9D97E041D8A4ABD00C4E3F6 /* MVCCore.swift */,
-				6936AF751D93DB9200C20A76 /* QSPageTransitionManager.swift */,
-			);
-			path = MVCCore;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -284,7 +273,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D97E0B1D8A4D4500C4E3F6 /* MVCCore.swift in Headers */,
 				A9D97E0A1D8A4D3F00C4E3F6 /* QSDictionaryAutoParseModel.swift in Headers */,
 				A93C6FEF1D8D7DD800BA48AD /* QuickStart.h in Headers */,
 				A9D4D8B01D8AADC80039E06D /* QSHttpRequest.swift in Headers */,
@@ -319,6 +307,7 @@
 				696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */,
 				69A961AC1D8FDA5200CFB273 /* QSDynamicFontManager.swift in Headers */,
 				691400B71D929FBD0039F56F /* CoreImageFilter.swift in Headers */,
+				A98C33C91D94156900C2FC99 /* QSPageTransitionManager.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,12 +396,12 @@
 				A93C6FCE1D8D76F800BA48AD /* UIImage+Extension.swift in Sources */,
 				A93C6FE91D8D7B0C00BA48AD /* NSBundle+Extension.swift in Sources */,
 				A93C6FEB1D8D7B0C00BA48AD /* String+Extension.swift in Sources */,
+				A98C33C81D94107400C2FC99 /* QSPageTransitionManager.swift in Sources */,
 				A93C6FD31D8D76F800BA48AD /* UIView+Extension.swift in Sources */,
 				A939679C1D8EE6E400EF6BF7 /* QSImageView.swift in Sources */,
 				A939678A1D8EE5E300EF6BF7 /* QSView.swift in Sources */,
 				A93967981D8EE67D00EF6BF7 /* QSTextView.swift in Sources */,
 				A93C6FE61D8D7B0C00BA48AD /* Functions.swift in Sources */,
-				A9D97E051D8A4ABD00C4E3F6 /* MVCCore.swift in Sources */,
 				A93967921D8EE64D00EF6BF7 /* QSCollectionView.swift in Sources */,
 				A939678C1D8EE60000EF6BF7 /* QSControl.swift in Sources */,
 				A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */,
@@ -422,7 +411,6 @@
 				A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
 				A93967961D8EE66E00EF6BF7 /* QSButton.swift in Sources */,
-				6936AF761D93DB9200C20A76 /* QSPageTransitionManager.swift in Sources */,
 				A93967941D8EE66100EF6BF7 /* QSLabel.swift in Sources */,
 				A93C6FE81D8D7B0C00BA48AD /* NSAttributedString+Extension.swift in Sources */,
 				A93C6FE71D8D7B0C00BA48AD /* Json+Extension.swift in Sources */,

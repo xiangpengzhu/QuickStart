@@ -13,12 +13,19 @@ import CoreImage
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let image = #imageLiteral(resourceName: "1")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let param = QSPageParameter()
+        param[secondViewParamId] = "100"
+        param[secondViewParamName] = "hello world"
+        let viewController = segue.destination
+        viewController.parameter = param
     }
 }
 
