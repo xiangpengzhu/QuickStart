@@ -10,6 +10,7 @@
 		691400B41D929BD30039F56F /* CoreImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; };
 		691400B61D929BE50039F56F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691400B51D929BE50039F56F /* CoreImage.framework */; };
 		691400B71D929FBD0039F56F /* CoreImageFilter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		6936AF761D93DB9200C20A76 /* QSPageTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6936AF751D93DB9200C20A76 /* QSPageTransitionManager.swift */; };
 		696C21D61D8E3D850056F2D3 /* Dictionary+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDB1D8D7B0C00BA48AD /* Dictionary+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D71D8E3D850056F2D3 /* Functions.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDC1D8D7B0C00BA48AD /* Functions.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D81D8E3D850056F2D3 /* Json+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDD1D8D7B0C00BA48AD /* Json+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		691400B31D929BD30039F56F /* CoreImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageFilter.swift; sourceTree = "<group>"; };
 		691400B51D929BE50039F56F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		6936AF751D93DB9200C20A76 /* QSPageTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSPageTransitionManager.swift; sourceTree = "<group>"; };
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D97E041D8A4ABD00C4E3F6 /* MVCCore.swift */,
+				6936AF751D93DB9200C20A76 /* QSPageTransitionManager.swift */,
 			);
 			path = MVCCore;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
 				A93967961D8EE66E00EF6BF7 /* QSButton.swift in Sources */,
+				6936AF761D93DB9200C20A76 /* QSPageTransitionManager.swift in Sources */,
 				A93967941D8EE66100EF6BF7 /* QSLabel.swift in Sources */,
 				A93C6FE81D8D7B0C00BA48AD /* NSAttributedString+Extension.swift in Sources */,
 				A93C6FE71D8D7B0C00BA48AD /* Json+Extension.swift in Sources */,

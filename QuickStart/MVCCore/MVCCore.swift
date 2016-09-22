@@ -1,5 +1,5 @@
 //
-//  MVCCore.swift
+//  QS.swift
 //  QuickStart
 //
 //  Created by zhuxiangpeng on 16/9/13.
@@ -13,14 +13,14 @@ fileprivate var viewControllerViewModelKey      = "viewControllerViewModelKey"
 fileprivate var viewViewModelKey                = "viewViewModelKey"
 
 //MARK: - ViewController
-public protocol MVCCoreViewController: NSObjectProtocol {
-    var viewModel: MVCCoreViewModel? { get set }
+public protocol QSViewController: NSObjectProtocol {
+    var viewModel: QSViewModel? { get set }
 }
 
-extension UIViewController: MVCCoreViewController {
-    public var viewModel: MVCCoreViewModel? {
+extension UIViewController: QSViewController {
+    public var viewModel: QSViewModel? {
         get {
-            return objc_getAssociatedObject(self, &viewControllerViewModelKey) as? MVCCoreViewModel
+            return objc_getAssociatedObject(self, &viewControllerViewModelKey) as? QSViewModel
         }
         set {
             objc_setAssociatedObject(self, &viewControllerViewModelKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -31,9 +31,9 @@ extension UIViewController: MVCCoreViewController {
 
 //MARK: - View
 extension UIView {
-    public var viewModel: MVCCoreViewModel? {
+    public var viewModel: QSViewModel? {
         get {
-            return objc_getAssociatedObject(self, &viewViewModelKey) as? MVCCoreViewModel
+            return objc_getAssociatedObject(self, &viewViewModelKey) as? QSViewModel
         }
         set {
             objc_setAssociatedObject(self, &viewViewModelKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -43,16 +43,16 @@ extension UIView {
 }
 
 //MARK: - viewModel
-public class MVCCoreViewModel: NSObject {
+public class QSViewModel: NSObject {
     public weak var viewController: UIViewController?
     public weak var view: UIView?
 }
 
-public class MVCCoreDataSourceAndDelegate: NSObject {
+public class QSDataSourceAndDelegate: NSObject {
     public weak var viewController: UIViewController?
-    public var viewModel: MVCCoreViewModel?
+    public var viewModel: QSViewModel?
     
-    init(viewController: UIViewController, viewModel: MVCCoreViewModel) {
+    init(viewController: UIViewController, viewModel: QSViewModel) {
         self.viewController = viewController
         self.viewModel = viewModel
         super.init()
@@ -63,10 +63,11 @@ public class MVCCoreDataSourceAndDelegate: NSObject {
     }
 }
 
-public class MVCCoreTableViewDataSourceAndDelegate: MVCCoreDataSourceAndDelegate {
+public class QSTableViewDataSourceAndDelegate: QSDataSourceAndDelegate {
+    
 }
 
-public class MVCCoreCollectionViewDataSourceAndDelegate: MVCCoreDataSourceAndDelegate {
+public class QSCollectionViewDataSourceAndDelegate: QSDataSourceAndDelegate {
     
 }
 
