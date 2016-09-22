@@ -31,11 +31,6 @@ public class QSPageParameter: NSObject {
 }
 
 
-/// 页面跳转管理类
-class QSPageTransitionManager: NSObject {
-    
-}
-
 fileprivate var viewControllerParameterKey = "viewControllerParameterKey"
 
 extension UIViewController {
