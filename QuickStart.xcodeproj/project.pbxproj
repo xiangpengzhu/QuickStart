@@ -73,8 +73,6 @@
 		A93C6FEF1D8D7DD800BA48AD /* QuickStart.h in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A98C33C81D94107400C2FC99 /* QSPageParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98C33C71D94107400C2FC99 /* QSPageParameter.swift */; };
 		A98C33C91D94156900C2FC99 /* QSPageParameter.swift in Headers */ = {isa = PBXBuildFile; fileRef = A98C33C71D94107400C2FC99 /* QSPageParameter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9D4D8901D8AA1180039E06D /* QSHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */; };
-		A9D4D8B01D8AADC80039E06D /* QSHttpRequest.swift in Headers */ = {isa = PBXBuildFile; fileRef = A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9D97E071D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D97E061D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift */; };
 		A9D97E0A1D8A4D3F00C4E3F6 /* QSDictionaryAutoParseModel.swift in Headers */ = {isa = PBXBuildFile; fileRef = A9D97E061D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -117,7 +115,6 @@
 		A93C6FE11D8D7B0C00BA48AD /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickStart.h; sourceTree = "<group>"; };
 		A98C33C71D94107400C2FC99 /* QSPageParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSPageParameter.swift; sourceTree = "<group>"; };
-		A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSHttpRequest.swift; sourceTree = "<group>"; };
 		A9D97E061D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDictionaryAutoParseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +189,6 @@
 				A93C6FD71D8D7B0C00BA48AD /* Foundation+Extension */,
 				A93C6FD41D8D778F00BA48AD /* Utilitys */,
 				A93C6F9E1D8C3EEB00BA48AD /* UIKit+Extension */,
-				A9D4D88E1D8AA1050039E06D /* HttpRequest */,
 				A9D97E021D8A4ABD00C4E3F6 /* JsonParse */,
 				69FFA7E51D87F6C8001FD4F4 /* Info.plist */,
 				A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */,
@@ -250,14 +246,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A9D4D88E1D8AA1050039E06D /* HttpRequest */ = {
-			isa = PBXGroup;
-			children = (
-				A9D4D88F1D8AA1180039E06D /* QSHttpRequest.swift */,
-			);
-			path = HttpRequest;
-			sourceTree = "<group>";
-		};
 		A9D97E021D8A4ABD00C4E3F6 /* JsonParse */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +263,6 @@
 			files = (
 				A9D97E0A1D8A4D3F00C4E3F6 /* QSDictionaryAutoParseModel.swift in Headers */,
 				A93C6FEF1D8D7DD800BA48AD /* QuickStart.h in Headers */,
-				A9D4D8B01D8AADC80039E06D /* QSHttpRequest.swift in Headers */,
 				696C21DC1D8E3D850056F2D3 /* String+Extension.swift in Headers */,
 				696C21D81D8E3D850056F2D3 /* Json+Extension.swift in Headers */,
 				696C21DA1D8E3D850056F2D3 /* NSBundle+Extension.swift in Headers */,
@@ -414,7 +401,6 @@
 				A93967941D8EE66100EF6BF7 /* QSLabel.swift in Sources */,
 				A93C6FE81D8D7B0C00BA48AD /* NSAttributedString+Extension.swift in Sources */,
 				A93C6FE71D8D7B0C00BA48AD /* Json+Extension.swift in Sources */,
-				A9D4D8901D8AA1180039E06D /* QSHttpRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
