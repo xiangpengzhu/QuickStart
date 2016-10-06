@@ -55,4 +55,23 @@ extension UIApplication {
             return ver
         }
     }
+    
+    public var appDelegate: UIApplicationDelegate? {
+        return UIApplication.shared.delegate
+    }
+    
+    public var appWindow: UIWindow? {
+        guard let delegate = self.appDelegate else {
+            return nil
+        }
+        
+        if delegate.responds(to: "window") {
+            return delegate.window!
+        }
+        return nil
+    }
+    
+    public var appRootViewController: UIViewController? {
+        return appWindow?.rootViewController
+    } 
 }

@@ -16,7 +16,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let vc = UIApplication.shared.appRootViewController
+        print(vc)
+        
+        let root = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController
+        print(root)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
