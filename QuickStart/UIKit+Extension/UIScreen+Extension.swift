@@ -23,5 +23,36 @@ extension UIScreen {
         let screen = self.bounds.size.width;
         return pixel * screen / origin;
     }
+    
+    
+    /// 动效设置屏幕亮度
+    ///
+    /// - parameter value:    亮度
+    /// - parameter animated: 是否有动画
+    func setBrightness(value: CGFloat, animated: Bool) {
+        if animated {
+            _brightnessQueue.cancelAllOperations()
+            let step: CGFloat = 0.005 * ((value > brightness) ? 1 : -1)
+            _brightnessQueue.addOperations(stride(from: brightness, through: value, by: step).map({ [weak self] value -> Operation in
+                let blockOperation = BlockOperation()
+                unowned let _unownedOperation = blockOperation
+                blockOperation.addExecutionBlock({
+                    if !_unownedOperation.isCancelled {
+                        Thread.sleep(forTimeInterval: 1 / 10000.0)
+                        self?.brightness = value
+                    }
+                })
+                return blockOperation
+                }), waitUntilFinished: false)
+        } else {
+            brightness = value
+        }
+    }
 }
 
+
+private let _brightnessQueue: OperationQueue = {
+    let queue = OperationQueue()
+    queue.maxConcurrentOperationCount = 1
+    return queue
+}()
