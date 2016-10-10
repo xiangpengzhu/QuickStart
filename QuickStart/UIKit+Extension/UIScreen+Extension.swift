@@ -29,7 +29,7 @@ extension UIScreen {
     ///
     /// - parameter value:    亮度
     /// - parameter animated: 是否有动画
-    func setBrightness(value: CGFloat, animated: Bool) {
+    public func setBrightness(value: CGFloat, animated: Bool) {
         if animated {
             _brightnessQueue.cancelAllOperations()
             let step: CGFloat = 0.005 * ((value > brightness) ? 1 : -1)
