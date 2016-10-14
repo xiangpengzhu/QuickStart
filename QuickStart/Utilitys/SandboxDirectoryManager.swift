@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SandboxDirectoryManager: NSObject {
+public class SandboxDirectoryManager: NSObject {
 
     //MARK: - 目录相关
     /**
@@ -16,7 +16,7 @@ class SandboxDirectoryManager: NSObject {
      
      - parameter desFilePath: 需要屏蔽的文件路径
      */
-    class func addSkipBackupAttribute(_ desFilePath: String) {
+    public class func addSkipBackupAttribute(_ desFilePath: String) {
         guard FileManager.default.fileExists(atPath: desFilePath) else { return }
         let url = URL(fileURLWithPath: desFilePath)
         do {
@@ -32,7 +32,7 @@ class SandboxDirectoryManager: NSObject {
      
      - returns: documents目录的完整路径
      */
-    class func documentDirectory() -> String? {
+    public class func documentDirectory() -> String? {
         let arr = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         if arr.count > 0 { return arr[0] }
         return nil
@@ -43,7 +43,7 @@ class SandboxDirectoryManager: NSObject {
      
      - returns: Library目录的完整路径
      */
-    class func libraryDirectory() -> String? {
+    public class func libraryDirectory() -> String? {
         let arr = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
         if arr.count > 0 { return arr[0] }
         return nil
@@ -54,7 +54,7 @@ class SandboxDirectoryManager: NSObject {
      
      - returns: Library/Caches目录的完整路径
      */
-    class func cacheDirectory() -> String? {
+    public class func cacheDirectory() -> String? {
         let arr = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
         if arr.count > 0 { return arr[0] }
         return nil
