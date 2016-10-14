@@ -15,15 +15,7 @@ extension Dictionary where Key : Hashable {
             return rhs
         }
         
-        var dic = [Key: Value]()
-        for (k, v) in lhs {
-            dic[k] = v
-        }
-        for (k, v) in rhs {
-            dic[k] = v
-        }
-        
-        return dic
+        return lhs + rhs
     }
     
     public static func +(lhs: [Key: Value], rhs: [Key: Value]?) -> [Key: Value] {
@@ -31,6 +23,12 @@ extension Dictionary where Key : Hashable {
             return lhs
         }
         
+        return lhs + rhs
+    }
+    
+    
+    public static func +(lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] {
+        
         var dic = [Key: Value]()
         for (k, v) in lhs {
             dic[k] = v
@@ -42,4 +40,5 @@ extension Dictionary where Key : Hashable {
         
         return dic
     }
+
 }
