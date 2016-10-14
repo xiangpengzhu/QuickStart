@@ -79,6 +79,72 @@ extension String {
         guard let string = str else { return "" }
         return string
     }
+    
+    
+    //MARK: - 目录相关，封装NSString相同的方法
+    
+    public static func path(withComponents components: [String]) -> String {
+        return NSString.path(withComponents: components)
+    }
+    
+    public var pathComponents: [String] {
+        return (self as NSString).pathComponents
+    }
+    
+    
+    public var isAbsolutePath: Bool {
+        return (self as NSString).isAbsolutePath
+    }
+    
+    
+    public var lastPathComponent: String {
+        return (self as NSString).lastPathComponent
+    }
+    
+    public var deletingLastPathComponent: String {
+        return (self as NSString).deletingLastPathComponent
+    }
+    
+    public func appendingPathComponent(_ str: String) -> String {
+        return (self as NSString).appendingPathComponent(str)
+    }
+    
+    
+    public var pathExtension: String {
+        return (self as NSString).pathExtension
+    }
+    
+    
+    public var deletingPathExtension: String {
+        return (self as NSString).deletingPathExtension
+    }
+    
+    public func appendingPathExtension(_ str: String) -> String? {
+        return (self as NSString).appendingPathExtension(str)
+    }
+    
+    
+    public var abbreviatingWithTildeInPath: String {
+        return (self as NSString).abbreviatingWithTildeInPath
+    }
+    
+    public var expandingTildeInPath: String {
+        return (self as NSString).expandingTildeInPath
+    }
+    
+    
+    public var standardizingPath: String {
+        return (self as NSString).standardizingPath
+    }
+    
+    
+    public var resolvingSymlinksInPath: String {
+        return (self as NSString).resolvingSymlinksInPath
+    }
+    
+    public func strings(byAppendingPaths paths: [String]) -> [String] {
+        return (self as NSString).strings(byAppendingPaths: paths)
+    }
 }
 
 
