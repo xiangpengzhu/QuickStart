@@ -32,6 +32,9 @@
 		696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; };
 		69A961AC1D8FDA5200CFB273 /* QSDynamicFontManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B592781DBDED8E003C778C /* QSMVPPresenter.swift */; };
+		69B5927B1DBDED8E003C778C /* QSMVPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B592791DBDED8E003C778C /* QSMVPView.swift */; };
+		69B5927D1DBDEE6C003C778C /* QSDoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B5927C1DBDEE6C003C778C /* QSDoublyLinkedList.swift */; };
 		A939678A1D8EE5E300EF6BF7 /* QSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93967891D8EE5E300EF6BF7 /* QSView.swift */; };
 		A939678C1D8EE60000EF6BF7 /* QSControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678B1D8EE60000EF6BF7 /* QSControl.swift */; };
 		A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A939678D1D8EE62200EF6BF7 /* QSScrollView.swift */; };
@@ -83,6 +86,9 @@
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
+		69B592781DBDED8E003C778C /* QSMVPPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSMVPPresenter.swift; sourceTree = "<group>"; };
+		69B592791DBDED8E003C778C /* QSMVPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSMVPView.swift; sourceTree = "<group>"; };
+		69B5927C1DBDEE6C003C778C /* QSDoublyLinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDoublyLinkedList.swift; sourceTree = "<group>"; };
 		69FFA7E11D87F6C8001FD4F4 /* QuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FFA7E51D87F6C8001FD4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93967891D8EE5E300EF6BF7 /* QSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSView.swift; sourceTree = "<group>"; };
@@ -164,6 +170,15 @@
 			path = SystemOverride;
 			sourceTree = "<group>";
 		};
+		69B592771DBDED8E003C778C /* MVPFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				69B592781DBDED8E003C778C /* QSMVPPresenter.swift */,
+				69B592791DBDED8E003C778C /* QSMVPView.swift */,
+			);
+			path = MVPFoundation;
+			sourceTree = "<group>";
+		};
 		69FFA7D71D87F6C8001FD4F4 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +199,7 @@
 		69FFA7E31D87F6C8001FD4F4 /* QuickStart */ = {
 			isa = PBXGroup;
 			children = (
+				69B592771DBDED8E003C778C /* MVPFoundation */,
 				696C21E91D8E44F70056F2D3 /* SystemOverride */,
 				696C21D31D8E398D0056F2D3 /* SystemModules */,
 				A93C6FD71D8D7B0C00BA48AD /* Foundation+Extension */,
@@ -234,6 +250,7 @@
 				A93C6FDF1D8D7B0C00BA48AD /* NSBundle+Extension.swift */,
 				A93C6FE01D8D7B0C00BA48AD /* NSDate+Extension.swift */,
 				A93C6FE11D8D7B0C00BA48AD /* String+Extension.swift */,
+				69B5927C1DBDEE6C003C778C /* QSDoublyLinkedList.swift */,
 			);
 			path = "Foundation+Extension";
 			sourceTree = "<group>";
@@ -381,9 +398,11 @@
 				A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */,
 				69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */,
 				A93C6FCE1D8D76F800BA48AD /* UIImage+Extension.swift in Sources */,
+				69B5927D1DBDEE6C003C778C /* QSDoublyLinkedList.swift in Sources */,
 				A93C6FE91D8D7B0C00BA48AD /* NSBundle+Extension.swift in Sources */,
 				A93C6FEB1D8D7B0C00BA48AD /* String+Extension.swift in Sources */,
 				A98C33C81D94107400C2FC99 /* QSPageParameter.swift in Sources */,
+				69B5927B1DBDED8E003C778C /* QSMVPView.swift in Sources */,
 				A93C6FD31D8D76F800BA48AD /* UIView+Extension.swift in Sources */,
 				A939679C1D8EE6E400EF6BF7 /* QSImageView.swift in Sources */,
 				A939678A1D8EE5E300EF6BF7 /* QSView.swift in Sources */,
@@ -394,6 +413,7 @@
 				A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */,
 				696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */,
 				A93C6FD61D8D77C100BA48AD /* SandboxDirectoryManager.swift in Sources */,
+				69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */,
 				A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */,
 				A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
