@@ -16,19 +16,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let list = QSDoublyLinkedList<Int>(rootValue: 0)
-        var value1 = list.insertValue(value: 1, afterNode: list.rootNode)
-        value1 = list.insertValue(value: -1, beforeNode: value1)
-        value1 = list.insertValue(value: -2, beforeNode: value1)
-        
-        value1 = list.insertValue(value: 10, afterNode: value1.behind!.behind!)
-        
-        var node: QSDoublyLinkedNode<Int>? = list.rootNode
-        while node != nil {
-            print(node?.value)
-            node = node?.behind
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

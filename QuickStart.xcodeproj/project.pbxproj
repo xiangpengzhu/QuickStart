@@ -10,6 +10,7 @@
 		691400B41D929BD30039F56F /* CoreImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; };
 		691400B61D929BE50039F56F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691400B51D929BE50039F56F /* CoreImage.framework */; };
 		691400B71D929FBD0039F56F /* CoreImageFilter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		6951FF151DCC736700786CB9 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951FF141DCC736700786CB9 /* UIAlertController+Extension.swift */; };
 		696C21D61D8E3D850056F2D3 /* Dictionary+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDB1D8D7B0C00BA48AD /* Dictionary+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D71D8E3D850056F2D3 /* Functions.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDC1D8D7B0C00BA48AD /* Functions.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D81D8E3D850056F2D3 /* Json+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDD1D8D7B0C00BA48AD /* Json+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		691400B31D929BD30039F56F /* CoreImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageFilter.swift; sourceTree = "<group>"; };
 		691400B51D929BE50039F56F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		6951FF141DCC736700786CB9 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				A93C6FC71D8D76F800BA48AD /* UIStoryboard+Extension.swift */,
 				A93C6FC91D8D76F800BA48AD /* UIView+Extension.swift */,
 				A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */,
+				6951FF141DCC736700786CB9 /* UIAlertController+Extension.swift */,
 			);
 			path = "UIKit+Extension";
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				A93C6FD01D8D76F800BA48AD /* UIScreen+Extension.swift in Sources */,
 				A93C6FEA1D8D7B0C00BA48AD /* NSDate+Extension.swift in Sources */,
 				A9D97E071D8A4AD700C4E3F6 /* QSDictionaryAutoParseModel.swift in Sources */,
+				6951FF151DCC736700786CB9 /* UIAlertController+Extension.swift in Sources */,
 				A93967901D8EE63300EF6BF7 /* QSTableView.swift in Sources */,
 				691400B41D929BD30039F56F /* CoreImageFilter.swift in Sources */,
 				A93C6FE51D8D7B0C00BA48AD /* Dictionary+Extension.swift in Sources */,
