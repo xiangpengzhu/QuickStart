@@ -34,7 +34,7 @@ extension UIAlertController {
         }
     }
     
-    public func show(fromViewController viewController: UIViewController?) {
+    public func show(fromViewController viewController: UIViewController? = nil) {
         if viewController != nil {
             viewController!.present(self, animated: true, completion: nil)
         }
