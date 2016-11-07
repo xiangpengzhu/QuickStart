@@ -34,8 +34,11 @@ extension UIAlertController {
         }
     }
     
-    public func show() {
-        if let root = UIApplication.shared.appRootViewController {
+    public func show(fromViewController viewController: UIViewController?) {
+        if viewController != nil {
+            viewController!.present(self, animated: true, completion: nil)
+        }
+        else if let root = UIApplication.shared.appRootViewController {
             root.present(self, animated: true, completion: nil)
         }
     }
