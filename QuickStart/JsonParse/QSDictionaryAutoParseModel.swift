@@ -27,10 +27,10 @@ import Foundation
             "age": 12
         ],
         ],
-        "person": [
+    "person": [
             "name": "ttt",
             "age": 12
-        ],
+    ],
  ]
  
  
@@ -45,17 +45,20 @@ import Foundation
     private(set) var data = [Person]()
  
     private(set) var person = Person()
+ }
  
-    class Person: QSDictionaryAutoParseModel {
-        var name = ""
-        var age = 0
-    }
+ class Person: QSDictionaryAutoParseModel {
+    var name = ""
+    var age = 0
  }
  
  let resp = ResponseData()
  let result = resp.parse(fromJsonObject: dic) { type in
     if type == "Person" {
-        return ResponseData.Person()
+        return Person()
+    }
+    else type == "Student" {
+        return Student()
     }
     return nil
  }
@@ -77,64 +80,68 @@ open class QSDictionaryAutoParseModel: NSObject {
             return false
         }
         
-        let mirror = Mirror(reflecting: self)
-        
-        for child in mirror.children {
-            guard let label = child.label else {
-                continue
-            }
+        var selfMir: Mirror? = Mirror(reflecting: self)
+        while let mirror = selfMir {
             
-            let value = child.value
-            let childMirror = Mirror(reflecting: value)
-            let childType = "\(childMirror.subjectType)"
-            print(child.label, child.value, childMirror.subjectType)
-            
-            switch childType {
-            case "Int":
-                if let intValue = dic[label] as? Int {
-                    self.setValue(intValue, forKey: label)
+            for child in mirror.children {
+                guard let label = child.label else {
+                    continue
                 }
                 
-            case "Float":
-                if let floatValue = dic[label] as? Float {
-                    self.setValue(floatValue, forKey: label)
-                }
+                let value = child.value
+                let childMirror = Mirror(reflecting: value)
+                let childType = "\(childMirror.subjectType)"
                 
-            case "Double":
-                if let doubleValue = dic[label] as? Double {
-                    self.setValue(doubleValue, forKey: label)
-                }
-                
-            case "String":
-                if let stringValue = dic[label] as? String {
-                    self.setValue(stringValue, forKey: label)
-                }
-                
-            case let type where type.hasPrefix("Array<") && type.hasSuffix(">"):
-                if let preRange = type.range(of: "Array<"), let sufRange = type.range(of: ">") {
-                    let startIndex = preRange.upperBound
-                    let endIndex = sufRange.lowerBound
+                switch childType {
+                case "Int":
+                    if let intValue = dic[label] as? Int {
+                        self.setValue(intValue, forKey: label)
+                    }
                     
-                    let eleType = type.substring(with: Range<String.Index>(startIndex..<endIndex))
-                    if let originArray = dic[label] as? Array<Any> {
-                        if let arrayValue = parse(fromArray: originArray, elementType: eleType, typeGenerator: typeGenerator) {
-                            self.setValue(arrayValue, forKey: label)
+                case "Float":
+                    if let floatValue = dic[label] as? Float {
+                        self.setValue(floatValue, forKey: label)
+                    }
+                    
+                case "Double":
+                    if let doubleValue = dic[label] as? Double {
+                        self.setValue(doubleValue, forKey: label)
+                    }
+                    
+                case "String":
+                    if let stringValue = dic[label] as? String {
+                        self.setValue(stringValue, forKey: label)
+                    }
+                    
+                case let type where type.hasPrefix("Array<") && type.hasSuffix(">"):
+                    if let preRange = type.range(of: "Array<"), let sufRange = type.range(of: ">") {
+                        let startIndex = preRange.upperBound
+                        let endIndex = sufRange.lowerBound
+                        
+                        let eleType = type.substring(with: Range<String.Index>(startIndex..<endIndex))
+                        if let originArray = dic[label] as? Array<Any> {
+                            if let arrayValue = parse(fromArray: originArray, elementType: eleType, typeGenerator: typeGenerator) {
+                                self.setValue(arrayValue, forKey: label)
+                            }
                         }
                     }
-                }
-                
-                break
-                
-            default:
-                if let model = typeGenerator?(childType), let modelDic = dic[label] {
-                    if model.parse(fromJsonObject: modelDic, typeGenerator: typeGenerator) {
-                        self.setValue(model, forKey: label)
+                    
+                    break
+                    
+                default:
+                    if let model = typeGenerator?(childType), let modelDic = dic[label] {
+                        if model.parse(fromJsonObject: modelDic, typeGenerator: typeGenerator) {
+                            self.setValue(model, forKey: label)
+                        }
                     }
+                    
+                    break
                 }
-                
-                break
             }
+            selfMir = selfMir?.superclassMirror
         }
+        
+        
         return true
     }
     
