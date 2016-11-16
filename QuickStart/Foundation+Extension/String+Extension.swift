@@ -81,6 +81,13 @@ extension String {
     }
     
     
+    /// 删除字符串两边的空格和空行
+    ///
+    /// - Returns: 返回字符串
+    public func strip() -> String {
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
+    
     //MARK: - 目录相关，封装NSString相同的方法
     
     public static func path(withComponents components: [String]) -> String {
