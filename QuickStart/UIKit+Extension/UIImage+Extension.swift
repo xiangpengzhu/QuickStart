@@ -53,4 +53,52 @@ extension UIImage {
     public func renderingImage() -> UIImage {
         return self.withRenderingMode(.alwaysTemplate)
     }
+    
+    
+    /// 在不改变图片宽高比例的情况下，适配图片大小
+    ///
+    /// - Parameter size: 要适配的大小
+    /// - Returns: 新的图片
+    public func adjustToSize(size: CGSize) -> UIImage? {
+        guard size.width > 0 && size.height > 0 else {
+            return self
+        }
+        
+        let limitSize = size
+        var size = self.size
+        guard size.width > 0 && size.height > 0 else {
+            return self
+        }
+        
+        var needChange = false
+        if size.width / size.height > limitSize.width / limitSize.height {
+            //以宽度为准
+            if size.width > limitSize.width {
+                let r = size.width / limitSize.width
+                size = CGSize(width: limitSize.width, height: size.height / r)
+                needChange = true
+            }
+        }
+        else {
+            //以高度为准
+            if size.height > limitSize.height {
+                let r = size.height / limitSize.height
+                size = CGSize(width: size.width / r, height: limitSize.height)
+                needChange = true
+            }
+        }
+        
+        if (needChange) {
+            UIGraphicsBeginImageContext(size);
+            let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height);
+            self.draw(in: rect)
+            let newimg = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            return newimg;
+        }
+        else {
+            return self;
+        }
+    }
 }
