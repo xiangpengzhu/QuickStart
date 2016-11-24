@@ -11,6 +11,7 @@
 		691400B61D929BE50039F56F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691400B51D929BE50039F56F /* CoreImage.framework */; };
 		691400B71D929FBD0039F56F /* CoreImageFilter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 691400B31D929BD30039F56F /* CoreImageFilter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		6951FF151DCC736700786CB9 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951FF141DCC736700786CB9 /* UIAlertController+Extension.swift */; };
+		696A60641DE6E151002AFA80 /* QSVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696A60631DE6E151002AFA80 /* QSVerticalButton.swift */; };
 		696C21D61D8E3D850056F2D3 /* Dictionary+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDB1D8D7B0C00BA48AD /* Dictionary+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D71D8E3D850056F2D3 /* Functions.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDC1D8D7B0C00BA48AD /* Functions.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21D81D8E3D850056F2D3 /* Json+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6FDD1D8D7B0C00BA48AD /* Json+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +86,7 @@
 		691400B31D929BD30039F56F /* CoreImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageFilter.swift; sourceTree = "<group>"; };
 		691400B51D929BE50039F56F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6951FF141DCC736700786CB9 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		696A60631DE6E151002AFA80 /* QSVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSVerticalButton.swift; sourceTree = "<group>"; };
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				A93967971D8EE67D00EF6BF7 /* QSTextView.swift */,
 				A93967991D8EE68C00EF6BF7 /* QSTextField.swift */,
 				A939679B1D8EE6E400EF6BF7 /* QSImageView.swift */,
+				696A60631DE6E151002AFA80 /* QSVerticalButton.swift */,
 			);
 			path = SystemOverride;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				A93C6FD61D8D77C100BA48AD /* SandboxDirectoryManager.swift in Sources */,
 				69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */,
 				A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */,
+				696A60641DE6E151002AFA80 /* QSVerticalButton.swift in Sources */,
 				A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
 				A93967961D8EE66E00EF6BF7 /* QSButton.swift in Sources */,
