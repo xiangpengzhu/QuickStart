@@ -10,7 +10,7 @@ import UIKit
 
 
 /// 图片和文字垂直排列，水平居中的button
-public class QSVerticalButton: QSTouchEdgeButton {
+open class QSVerticalButton: QSTouchEdgeButton {
     
     public var imageTitleSpace: CGFloat = 10 {
         didSet {
@@ -19,7 +19,7 @@ public class QSVerticalButton: QSTouchEdgeButton {
         }
     }
     
-    override public func imageRect(forContentRect contentRect: CGRect) -> CGRect {
+    override open func imageRect(forContentRect contentRect: CGRect) -> CGRect {
         if let image = self.currentImage {
             if let title = self.currentTitle {
                 if let font = self.titleLabel?.font {
@@ -37,7 +37,7 @@ public class QSVerticalButton: QSTouchEdgeButton {
         return CGRect.zero
     }
     
-    override public func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+    override open func titleRect(forContentRect contentRect: CGRect) -> CGRect {
         let rect = super.titleRect(forContentRect: contentRect)
         
         if let title = self.currentTitle {
