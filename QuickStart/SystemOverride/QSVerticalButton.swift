@@ -19,6 +19,13 @@ open class QSVerticalButton: QSTouchEdgeButton {
         }
     }
     
+    public var titleFont: UIFont = UIFont.systemFont(ofSize: 10) {
+        didSet {
+            self.layoutIfNeeded()
+            self.setNeedsLayout()
+        }
+    }
+    
     override open func imageRect(forContentRect contentRect: CGRect) -> CGRect {
         if let image = self.currentImage {
             if let title = self.currentTitle {
@@ -38,17 +45,21 @@ open class QSVerticalButton: QSTouchEdgeButton {
     }
     
     override open func titleRect(forContentRect contentRect: CGRect) -> CGRect {
-        let rect = super.titleRect(forContentRect: contentRect)
         
         if let title = self.currentTitle {
+            let size = (title as NSString).size(attributes: [NSFontAttributeName: self.titleFont])
+            let x: CGFloat = (self.bounds.width - size.width) / 2.0
+            var y: CGFloat = 0
+            
             if let image = self.currentImage {
-                return CGRect(x: (self.bounds.width - rect.width) / 2.0, y: (self.bounds.height - image.size.height - rect.height - imageTitleSpace) / 2.0 + image.size.height + imageTitleSpace, width: rect.width, height: rect.height)
+                y = (self.bounds.height - image.size.height - size.height - imageTitleSpace) / 2.0 + image.size.height + imageTitleSpace
             }
             else {
-                return rect
+                y = (self.bounds.height - size.height) / 2.0
             }
+            
+            return CGRect(x: x, y: y, width: size.width, height: size.height)
         }
         
         return CGRect.zero
-    }
-}
+    }}
