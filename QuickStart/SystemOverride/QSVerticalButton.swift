@@ -21,6 +21,7 @@ open class QSVerticalButton: QSTouchEdgeButton {
     
     public var titleFont: UIFont = UIFont.systemFont(ofSize: 10) {
         didSet {
+            self.titleLabel?.font = titleFont
             self.layoutIfNeeded()
             self.setNeedsLayout()
         }
@@ -62,4 +63,5 @@ open class QSVerticalButton: QSTouchEdgeButton {
         }
         
         return CGRect.zero
-    }}
+    }
+}
