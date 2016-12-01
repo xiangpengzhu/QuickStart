@@ -10,6 +10,47 @@ import UIKit
 import QuickStart
 import CoreImage
 
+let dic: [String : Any] = [
+    "success": true,
+    "code": 0,
+    "msg": "success",
+    "doubleValue": 3.14159265,
+    "floatValue": 3.14,
+    "data": [
+        [
+            "name": "zxp",
+            "age": 10
+        ],
+        [
+            "name": "ttt",
+            "age": 12
+        ],
+    ],
+    "person": [
+        "name": "ttt",
+        "age": 12
+    ],
+]
+
+
+
+class ResponseData: QSDictionaryAutoParseModel {
+    
+    private(set) var success: Bool = false
+    private(set) var code: Int = 0
+    private(set) var doubleValue: Double = 0.0
+    private(set) var floatValue: Float = 0.0
+    
+    private(set) var msg = ""
+    private(set) var data = [Person]()
+    
+    private(set) var person = Person()
+}
+
+class Person: QSDictionaryAutoParseModel {
+    var name = ""
+    var age = 0
+}
 
 class ViewController: UIViewController {
     
@@ -17,16 +58,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = QSVerticalButton(type: .custom)
-        button.backgroundColor = UIColor.red
-        button.setImage(#imageLiteral(resourceName: "tab_my"), for: .normal)
-        button.setTitle("我的", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
-        view.addSubview(button)
+        let resp = ResponseData()
+        let result = resp.parse(fromJsonObject: dic) { type in
+            if type == "Person" {
+                return Person()
+            }
+            return nil
+        }
         
-        button.frame = CGRect(x: 100, y: 100, width: 40, height: 40)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 9)
-        button.imageTitleSpace = 5
+        if result {
+        }
+
+
     }
 }
 

@@ -113,6 +113,11 @@ open class QSDictionaryAutoParseModel: NSObject {
                         self.setValue(stringValue, forKey: label)
                     }
                     
+                case "Bool":
+                    if let boolValue = dic[label] as? Bool {
+                        self.setValue(boolValue, forKey: label)
+                    }
+                    
                 case let type where type.hasPrefix("Array<") && type.hasSuffix(">"):
                     if let preRange = type.range(of: "Array<"), let sufRange = type.range(of: ">") {
                         let startIndex = preRange.upperBound
@@ -160,6 +165,9 @@ open class QSDictionaryAutoParseModel: NSObject {
                 
             case "String":
                 return obj as? String
+                
+            case "Bool":
+                return obj as? Bool
                 
             default:
                 if let model = typeGenerator?(elementType) {
