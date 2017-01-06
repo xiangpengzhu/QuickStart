@@ -23,6 +23,17 @@ extension UIApplication {
         }
     }
     
+    /// app build号
+    public var appBuild: String {
+        get {
+            guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else {return ""}
+            guard let dic = NSDictionary(contentsOfFile: path) else {return ""}
+            guard let verObj = dic.object(forKey: "CFBundleVersion") else {return ""}
+            guard let ver = verObj as? String else {return ""}
+            return ver
+        }
+    }
+    
     /// app显示名称
     public var appDisplayName: String {
         get {
