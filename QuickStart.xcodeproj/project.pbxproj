@@ -37,6 +37,10 @@
 		699EF4461E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699EF4441E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift */; };
 		699EF4471E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699EF4451E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib */; };
 		699EF44A1E8CD5DE00CD3D6E /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699EF4491E8CD5DE00CD3D6E /* CellProtocol.swift */; };
+		699EF45C1E8CEDA800CD3D6E /* QSImagePickerPhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699EF45B1E8CEDA800CD3D6E /* QSImagePickerPhotosController.swift */; };
+		699EF45E1E8CF78200CD3D6E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699EF45D1E8CF78200CD3D6E /* Media.xcassets */; };
+		699EF4611E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699EF45F1E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.swift */; };
+		699EF4621E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699EF4601E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.xib */; };
 		69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; };
 		69A961AC1D8FDA5200CFB273 /* QSDynamicFontManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B592781DBDED8E003C778C /* QSMVPPresenter.swift */; };
@@ -99,6 +103,10 @@
 		699EF4441E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerAlbumsCell.swift; sourceTree = "<group>"; };
 		699EF4451E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSImagePickerAlbumsCell.xib; sourceTree = "<group>"; };
 		699EF4491E8CD5DE00CD3D6E /* CellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
+		699EF45B1E8CEDA800CD3D6E /* QSImagePickerPhotosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerPhotosController.swift; sourceTree = "<group>"; };
+		699EF45D1E8CF78200CD3D6E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		699EF45F1E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerPhotoCell.swift; sourceTree = "<group>"; };
+		699EF4601E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSImagePickerPhotoCell.xib; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
 		69B592781DBDED8E003C778C /* QSMVPPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSMVPPresenter.swift; sourceTree = "<group>"; };
 		69B592791DBDED8E003C778C /* QSMVPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSMVPView.swift; sourceTree = "<group>"; };
@@ -192,6 +200,9 @@
 				699AB7DB1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift */,
 				699EF4441E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift */,
 				699EF4451E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib */,
+				699EF45B1E8CEDA800CD3D6E /* QSImagePickerPhotosController.swift */,
+				699EF45F1E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.swift */,
+				699EF4601E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.xib */,
 			);
 			path = QSImagePickerController;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 				A9D97E021D8A4ABD00C4E3F6 /* JsonParse */,
 				69FFA7E51D87F6C8001FD4F4 /* Info.plist */,
 				A93C6FEE1D8D7DD800BA48AD /* QuickStart.h */,
+				699EF45D1E8CF78200CD3D6E /* Media.xcassets */,
 			);
 			path = QuickStart;
 			sourceTree = "<group>";
@@ -412,6 +424,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699EF4621E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.xib in Resources */,
+				699EF45E1E8CF78200CD3D6E /* Media.xcassets in Resources */,
 				699EF4471E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,9 +471,11 @@
 				699EF44A1E8CD5DE00CD3D6E /* CellProtocol.swift in Sources */,
 				A93C6FD61D8D77C100BA48AD /* SandboxDirectoryManager.swift in Sources */,
 				69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */,
+				699EF4611E8CF7CA00CD3D6E /* QSImagePickerPhotoCell.swift in Sources */,
 				A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */,
 				696A60641DE6E151002AFA80 /* QSVerticalButton.swift in Sources */,
 				A939679A1D8EE68C00EF6BF7 /* QSTextField.swift in Sources */,
+				699EF45C1E8CEDA800CD3D6E /* QSImagePickerPhotosController.swift in Sources */,
 				A93C6FCD1D8D76F800BA48AD /* UIFont+Extension.swift in Sources */,
 				A93967961D8EE66E00EF6BF7 /* QSButton.swift in Sources */,
 				A93967941D8EE66100EF6BF7 /* QSLabel.swift in Sources */,

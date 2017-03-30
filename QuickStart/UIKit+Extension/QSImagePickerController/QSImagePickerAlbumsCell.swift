@@ -8,17 +8,8 @@
 
 import UIKit
 
-class QSImagePickerAlbumsCellModel: NSObject, CellModelProtocol {
+class QSImagePickerAlbumsCellModel: NSObject {
 	
-	var identifier: String {
-		return "QSImagePickerAlbumsCell"
-	}
-	
-	var cellHeight: CGFloat {
-		return 60
-	}
-	
-	var album: UIImage?
 	fileprivate(set) var name: String
 	fileprivate(set) var count: Int
 	
@@ -29,9 +20,11 @@ class QSImagePickerAlbumsCellModel: NSObject, CellModelProtocol {
 	}
 }
 
-class QSImagePickerAlbumsCell: UITableViewCell, CellProtocol {
+class QSImagePickerAlbumsCell: UITableViewCell {
 
-	@IBOutlet private var imageV: UIImageView!
+	var representedAssetIdentifier: String?
+
+	@IBOutlet var imageV: UIImageView!
 	@IBOutlet private var nameL: UILabel!
 	@IBOutlet private var countL: UILabel!
 	
@@ -41,18 +34,9 @@ class QSImagePickerAlbumsCell: UITableViewCell, CellProtocol {
 		accessoryType = .disclosureIndicator
     }
 	
-	func configureCell(withModel model: CellModelProtocol) {
-		guard let model = model as? QSImagePickerAlbumsCellModel else {
-			return
-		}
-				
-		if model.album == nil {
-			imageV.image = UIImage(color: UIColor.lightGray, rect: CGRect(x: 0, y: 0, width: 1, height: 1))
-		}
-		else {
-			imageV.image = model.album
-		}
+	func configureCell(withModel model: QSImagePickerAlbumsCellModel) {
 		
+		imageV.image = UIImage(color: UIColor(colorHexValue: 0xcccccc), rect: CGRect(x: 0, y: 0, width: 1, height: 1))
 		nameL.text = model.name
 		countL.text = "(\(model.count))"
 	}
