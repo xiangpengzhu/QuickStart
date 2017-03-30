@@ -24,6 +24,7 @@ class QSImagePickerPhotosController: UIViewController {
 	fileprivate var selectedAssets = [PHAsset: Bool]()
 	
 	fileprivate var collectionView: UICollectionView!
+	fileprivate var toolBar: QSImagePickerPhotosToolBar!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,16 @@ class QSImagePickerPhotosController: UIViewController {
 		collectionView.backgroundColor = UIColor.white
 		view.addSubview(collectionView)
 		
+		toolBar = QSImagePickerPhotosToolBar.newInstance()
+		view.addSubview(toolBar)
+		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
+		toolBar.translatesAutoresizingMaskIntoConstraints = false
+		
 		var constraints = [NSLayoutConstraint]()
-		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: .alignAllBottom, metrics: nil, views: ["view": collectionView]))
-		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: .alignAllLeft, metrics: nil, views: ["view": collectionView]))
+		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[collectionView]|", options: .alignAllBottom, metrics: nil, views: ["collectionView": collectionView, "toolBar": toolBar]))
+		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[toolBar]|", options: .alignAllBottom, metrics: nil, views: ["collectionView": collectionView, "toolBar": toolBar]))
+		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[collectionView][toolBar(44)]|", options: .alignAllLeft, metrics: nil, views: ["collectionView": collectionView, "toolBar": toolBar]))
 		view.addConstraints(constraints)
 		
 		let frameworkBundleID = "com.kxsq.QuickStart"
@@ -116,7 +123,21 @@ extension QSImagePickerPhotosController: UICollectionViewDelegate, UICollectionV
 		return cell
 
 	}
-
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let asset = phAssets.object(at: indexPath.item)
+		if selectedAssets[asset] == nil {
+			selectedAssets[asset] = true
+		}
+		else {
+			selectedAssets[asset] = nil
+		}
+		
+		collectionView.reloadData()
+		
+		toolBar.doneDisable = selectedAssets.count == 0
+		toolBar.count = selectedAssets.count
+	}
 }
 
 extension QSImagePickerPhotosController {
