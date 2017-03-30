@@ -32,6 +32,11 @@
 		696C21E81D8E3D850056F2D3 /* UIViewController+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = A93C6F9F1D8C3F0200BA48AD /* UIViewController+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; };
 		696C21EC1D8E45A00056F2D3 /* TouchEdgeViews.swift in Headers */ = {isa = PBXBuildFile; fileRef = 696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		699AB7DA1E8BC43900A6E365 /* QSImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699AB7D91E8BC43900A6E365 /* QSImagePickerController.swift */; };
+		699AB7DC1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699AB7DB1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift */; };
+		699EF4461E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699EF4441E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift */; };
+		699EF4471E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699EF4451E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib */; };
+		699EF44A1E8CD5DE00CD3D6E /* CellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699EF4491E8CD5DE00CD3D6E /* CellProtocol.swift */; };
 		69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; };
 		69A961AC1D8FDA5200CFB273 /* QSDynamicFontManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B592781DBDED8E003C778C /* QSMVPPresenter.swift */; };
@@ -89,6 +94,11 @@
 		696A60631DE6E151002AFA80 /* QSVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSVerticalButton.swift; sourceTree = "<group>"; };
 		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
+		699AB7D91E8BC43900A6E365 /* QSImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerController.swift; sourceTree = "<group>"; };
+		699AB7DB1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerAlbumsController.swift; sourceTree = "<group>"; };
+		699EF4441E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerAlbumsCell.swift; sourceTree = "<group>"; };
+		699EF4451E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QSImagePickerAlbumsCell.xib; sourceTree = "<group>"; };
+		699EF4491E8CD5DE00CD3D6E /* CellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProtocol.swift; sourceTree = "<group>"; };
 		69A961AA1D8FDA3400CFB273 /* QSDynamicFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSDynamicFontManager.swift; sourceTree = "<group>"; };
 		69B592781DBDED8E003C778C /* QSMVPPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSMVPPresenter.swift; sourceTree = "<group>"; };
 		69B592791DBDED8E003C778C /* QSMVPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSMVPView.swift; sourceTree = "<group>"; };
@@ -175,6 +185,25 @@
 			path = SystemOverride;
 			sourceTree = "<group>";
 		};
+		699AB7D81E8BC43900A6E365 /* QSImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				699AB7D91E8BC43900A6E365 /* QSImagePickerController.swift */,
+				699AB7DB1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift */,
+				699EF4441E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift */,
+				699EF4451E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib */,
+			);
+			path = QSImagePickerController;
+			sourceTree = "<group>";
+		};
+		699EF4481E8CD5DE00CD3D6E /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				699EF4491E8CD5DE00CD3D6E /* CellProtocol.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		69B592771DBDED8E003C778C /* MVPFoundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +233,7 @@
 		69FFA7E31D87F6C8001FD4F4 /* QuickStart */ = {
 			isa = PBXGroup;
 			children = (
+				699EF4481E8CD5DE00CD3D6E /* Commons */,
 				69B592771DBDED8E003C778C /* MVPFoundation */,
 				696C21E91D8E44F70056F2D3 /* SystemOverride */,
 				696C21D31D8E398D0056F2D3 /* SystemModules */,
@@ -220,6 +250,7 @@
 		A93C6F9E1D8C3EEB00BA48AD /* UIKit+Extension */ = {
 			isa = PBXGroup;
 			children = (
+				699AB7D81E8BC43900A6E365 /* QSImagePickerController */,
 				A93C6FC01D8D76F800BA48AD /* UIApplication+Extension.swift */,
 				A93C6FC11D8D76F800BA48AD /* UIColor+Extension.swift */,
 				A93C6FC21D8D76F800BA48AD /* UIDevice+Extension.swift */,
@@ -381,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699EF4471E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +426,7 @@
 				A93C6FA01D8C3F0200BA48AD /* UIViewController+Extension.swift in Sources */,
 				A93C6FCC1D8D76F800BA48AD /* UIDevice+Extension.swift in Sources */,
 				A93C6FD11D8D76F800BA48AD /* UIStoryboard+Extension.swift in Sources */,
+				699AB7DA1E8BC43900A6E365 /* QSImagePickerController.swift in Sources */,
 				A93C6FCF1D8D76F800BA48AD /* UILabel+Extension.swift in Sources */,
 				A93C6FD01D8D76F800BA48AD /* UIScreen+Extension.swift in Sources */,
 				A93C6FEA1D8D7B0C00BA48AD /* NSDate+Extension.swift in Sources */,
@@ -401,6 +434,7 @@
 				6951FF151DCC736700786CB9 /* UIAlertController+Extension.swift in Sources */,
 				A93967901D8EE63300EF6BF7 /* QSTableView.swift in Sources */,
 				691400B41D929BD30039F56F /* CoreImageFilter.swift in Sources */,
+				699AB7DC1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift in Sources */,
 				A93C6FE51D8D7B0C00BA48AD /* Dictionary+Extension.swift in Sources */,
 				A939678E1D8EE62200EF6BF7 /* QSScrollView.swift in Sources */,
 				69A961AB1D8FDA3400CFB273 /* QSDynamicFontManager.swift in Sources */,
@@ -419,6 +453,8 @@
 				A939678C1D8EE60000EF6BF7 /* QSControl.swift in Sources */,
 				A93C6FCB1D8D76F800BA48AD /* UIColor+Extension.swift in Sources */,
 				696C21EB1D8E45190056F2D3 /* TouchEdgeViews.swift in Sources */,
+				699EF4461E8CD4F100CD3D6E /* QSImagePickerAlbumsCell.swift in Sources */,
+				699EF44A1E8CD5DE00CD3D6E /* CellProtocol.swift in Sources */,
 				A93C6FD61D8D77C100BA48AD /* SandboxDirectoryManager.swift in Sources */,
 				69B5927A1DBDED8E003C778C /* QSMVPPresenter.swift in Sources */,
 				A93C6FCA1D8D76F800BA48AD /* UIApplication+Extension.swift in Sources */,
