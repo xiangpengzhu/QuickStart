@@ -21,6 +21,7 @@ class QSImagePickerPhotosController: UIViewController {
 	fileprivate var previousPreheatRect = CGRect.zero
 	fileprivate var thumbnailSize: CGSize!
 
+	fileprivate var selectedAssets = [PHAsset: Bool]()
 	
 	fileprivate var collectionView: UICollectionView!
 	
@@ -32,6 +33,7 @@ class QSImagePickerPhotosController: UIViewController {
 		resetCachedAssets()
 		PHPhotoLibrary.shared().register(self)
 		
+		selectedAssets.removeAll()
 		
 		let flowLayout = UICollectionViewFlowLayout()
 		flowLayout.scrollDirection = .vertical
@@ -58,7 +60,6 @@ class QSImagePickerPhotosController: UIViewController {
 		
 		collectionView.dataSource = self
 		collectionView.delegate = self
-		
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -67,27 +68,13 @@ class QSImagePickerPhotosController: UIViewController {
 		// Determine the size of the thumbnails to request from the PHCachingImageManager
 		let scale = UIScreen.main.scale
 		thumbnailSize = CGSize(width: itemSize * scale, height: itemSize * scale)
-	
-		collectionViewScrollToBottom()
-
+		
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		updateCachedAssets()
 	}
-	
-	
-	private func collectionViewScrollToBottom() {
-		let contentHeight = collectionView.contentSize.height
-		var offsetY = contentHeight - collectionView.bounds.height
-		if offsetY < 0 {
-			offsetY = 0
-		}
-		
-		collectionView.contentOffset = CGPoint(x: 0, y: offsetY)
-	}
-	
 
 	@objc private func cancelButtonClick() {
 		imagePicker?.dismiss(completion: nil)
@@ -105,22 +92,22 @@ extension QSImagePickerPhotosController: UICollectionViewDelegate, UICollectionV
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		
 		let asset = phAssets.object(at: indexPath.item)
 		
-		// Dequeue a GridViewCell.
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QSImagePickerPhotoCell", for: indexPath) as? QSImagePickerPhotoCell
 			else {
 				return collectionView.dequeueReusableCell(withReuseIdentifier: "ErrorCell", for: indexPath)
 		}
 		
-
-		let options = PHImageRequestOptions()
-		options.deliveryMode = .opportunistic
-		options.isNetworkAccessAllowed = true
-
+		let frameworkBundleID = "com.kxsq.QuickStart"
+		let bundle = Bundle(identifier: frameworkBundleID)
+		let imageName = selectedAssets[asset] == nil ? "image_picker_select" : "image_picker_select_h"
+		
+		cell.selectImageV.image = UIImage(named: imageName, in: bundle, compatibleWith: nil)
+		cell.disable = asset.disable
 		cell.representedAssetIdentifier = asset.localIdentifier
-		imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: options, resultHandler: { image, _ in
-			
+		imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
 			if cell.representedAssetIdentifier == asset.localIdentifier {
 				cell.imageV.image = image
 			}
@@ -136,8 +123,6 @@ extension QSImagePickerPhotosController {
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		updateCachedAssets()
 	}
-	
-	// MARK: Asset Caching
 	
 	fileprivate func resetCachedAssets() {
 		imageManager.stopCachingImagesForAllAssets()
@@ -213,5 +198,23 @@ private extension UICollectionView {
 	func indexPathsForElements(in rect: CGRect) -> [IndexPath] {
 		let allLayoutAttributes = collectionViewLayout.layoutAttributesForElements(in: rect)!
 		return allLayoutAttributes.map { $0.indexPath }
+	}
+}
+
+extension PHAsset {
+	
+	/// 视频和photolive图片不能被选中
+	var disable: Bool {
+		if #available(iOS 9.1, *) {
+			if self.mediaType == .video || self.mediaSubtypes.contains(.photoLive) {
+				return true
+			}
+		} else {
+			if self.mediaType == .video {
+				return true
+			}
+		}
+		
+		return false
 	}
 }

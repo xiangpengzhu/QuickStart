@@ -25,11 +25,7 @@ class QSImagePickerAlbumsController: UIViewController {
 	fileprivate var tableView: UITableView!
 	
 	fileprivate lazy var albumItems = [QSImagePickerAlbumItem]()
-	fileprivate lazy var cellModels = [QSImagePickerAlbumsCellModel]()
-	fileprivate lazy var phAssets = [PHAsset]()
-	
 	fileprivate let imageManager = PHCachingImageManager()
-	fileprivate lazy var loadImageDic = [QSImagePickerAlbumsCellModel: Bool]()
 	
 	init(withImagePicker imagePicker: QSImagePickerController) {
 		super.init(nibName: nil, bundle: nil)
@@ -71,33 +67,26 @@ class QSImagePickerAlbumsController: UIViewController {
 	fileprivate func readAlbumsData() {
 		
 		albumItems.removeAll()
-		cellModels.removeAll()
-		loadImageDic.removeAll()
-		phAssets.removeAll()
 		
 		var allPhotosAlbumItem: QSImagePickerAlbumItem?
-		var allPhotosCellModel: QSImagePickerAlbumsCellModel?
-		var allPhotosPHAsset: PHAsset?
 		
+		let options = PHFetchOptions()
+		options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+
 		//smart
 		let smartCollections = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
 		for index in 0..<smartCollections.count {
 			let collection = smartCollections.object(at: index)
-			let photos = PHAsset.fetchAssets(in: collection, options: nil)
+			let photos = PHAsset.fetchAssets(in: collection, options: options)
 			if photos.count > 0 {
 				
 				let albumItem = QSImagePickerAlbumItem(name: collection.localizedTitle ?? "未知相册", count: photos.count, phAssets: photos)
-				let cellModel = QSImagePickerAlbumsCellModel(item: albumItem)
 				
 				if (collection.localizedTitle == "所有照片") {
 					allPhotosAlbumItem = albumItem
-					allPhotosCellModel = cellModel
-					allPhotosPHAsset = photos.object(at: 0)
 				}
 				else {
 					albumItems.append(albumItem)
-					cellModels.append(cellModel)
-					phAssets.append(photos.object(at: 0))
 				}
 			}
 		}
@@ -106,29 +95,24 @@ class QSImagePickerAlbumsController: UIViewController {
 		let userCollections = PHCollectionList.fetchTopLevelUserCollections(with: nil)
 		for index in 0..<userCollections.count {
 			if let collection = userCollections.object(at: index) as? PHAssetCollection {
-				let photos = PHAsset.fetchAssets(in: collection, options: nil)
+				let photos = PHAsset.fetchAssets(in: collection, options: options)
 				if photos.count > 0 {
-					phAssets.append(photos.object(at: 0))
 					
 					let albumItem = QSImagePickerAlbumItem(name: collection.localizedTitle ?? "未知相册", count: photos.count, phAssets: photos)
 					albumItems.append(albumItem)
-					
-					let cellModel = QSImagePickerAlbumsCellModel(item: albumItem)
-					cellModels.append(cellModel)
 				}
 			}
 		}
 		
 		//把全部照片放在第一个位置
-		if allPhotosAlbumItem != nil && allPhotosCellModel != nil && allPhotosPHAsset != nil {
+		if allPhotosAlbumItem != nil {
 			albumItems.insert(allPhotosAlbumItem!, at: 0)
-			cellModels.insert(allPhotosCellModel!, at: 0)
-			phAssets.insert(allPhotosPHAsset!, at: 0)
 		}
 		
-		let options = PHImageRequestOptions()
-		options.isNetworkAccessAllowed = true
-		imageManager.startCachingImages(for: phAssets, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: options)
+		let phAssets = albumItems.map { $0.phAssets.firstObject! }
+		let reqOptions = PHImageRequestOptions()
+		reqOptions.isNetworkAccessAllowed = true
+		imageManager.startCachingImages(for: phAssets, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: reqOptions)
 	}
 	
 	
@@ -148,17 +132,17 @@ extension QSImagePickerAlbumsController: UITableViewDataSource, UITableViewDeleg
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return cellModels.count
+		return albumItems.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let model = cellModels[indexPath.row]
-		let phAsset = phAssets[indexPath.row]
+		let albumItem = albumItems[indexPath.row]
 		if let cell = tableView.dequeueReusableCell(withIdentifier: "QSImagePickerAlbumsCell", for: indexPath) as? QSImagePickerAlbumsCell {
-			cell.configureCell(withModel: model)
-			cell.representedAssetIdentifier = phAsset.localIdentifier
-			imageManager.requestImage(for: phAsset, targetSize:CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
-				if cell.representedAssetIdentifier == phAsset.localIdentifier {
+			cell.representedAssetIdentifier = albumItem.phAssets.firstObject!.localIdentifier
+			cell.nameL.text = albumItem.name
+			cell.countL.text = "(\(albumItem.count))"
+			imageManager.requestImage(for: albumItem.phAssets.firstObject!, targetSize:CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+				if cell.representedAssetIdentifier == albumItem.phAssets.firstObject!.localIdentifier {
 					cell.imageV.image = image
 				}
 			})
@@ -174,12 +158,12 @@ extension QSImagePickerAlbumsController: UITableViewDataSource, UITableViewDeleg
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		if indexPath.row >= 0 && indexPath.row < albumItems.count && indexPath.row < cellModels.count {
+		if indexPath.row >= 0 && indexPath.row < albumItems.count {
 			let album = albumItems[indexPath.row]
 			
 			let photosList = QSImagePickerPhotosController()
 			photosList.phAssets = album.phAssets
-			photosList.title = cellModels[indexPath.row].name
+			photosList.title = album.name
 			photosList.imagePicker = self.imagePicker
 			self.navigationController?.pushViewController(photosList, animated: true)
 		}
