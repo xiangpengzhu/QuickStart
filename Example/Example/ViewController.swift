@@ -22,9 +22,27 @@ class ViewController: UIViewController, QSImagePickerControllerDelegate {
 	func buttonClick() {
 		let imagePicker = QSImagePickerController()
 		imagePicker.delegate = self
+		imagePicker.maxCount = 5
+		imagePicker.compressImageMaxHeight = 10000
+		imagePicker.compressImageMaxWidth = 10000
 		imagePicker.show(inViewController: self)
 	}
 
-	
+	func imagePicker(imagePicker: QSImagePickerController, didFinishedSelectImages images: [UIImage]) {
+		
+		let documents = SandboxDirectoryManager.documentDirectory()
+		
+		for (index, image) in images.enumerated() {
+			guard let path = documents?.appendingPathComponent("\(index).jpg") else {
+				continue
+			}
+			let data = UIImageJPEGRepresentation(image, 1.0)
+			let url = URL(fileURLWithPath: path)
+			do {
+				try data?.write(to: url)
+			}
+			catch {}
+		}
+	}
 }
 

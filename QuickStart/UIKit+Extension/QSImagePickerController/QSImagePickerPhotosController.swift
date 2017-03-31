@@ -16,12 +16,16 @@ class QSImagePickerPhotosController: UIViewController {
 
 	var phAssets: PHFetchResult<PHAsset>!
 	weak var imagePicker: QSImagePickerController?
+	var maxCount: Int = 0
+	var compressImageMaxWidth: CGFloat = 0
+	var compressImageMaxHeight: CGFloat = 0
 
 	fileprivate let imageManager = PHCachingImageManager()
 	fileprivate var previousPreheatRect = CGRect.zero
 	fileprivate var thumbnailSize: CGSize!
 
 	fileprivate var selectedAssets = [PHAsset: Bool]()
+	fileprivate var selectedAssetArray = [PHAsset]()
 	
 	fileprivate var collectionView: UICollectionView!
 	fileprivate var toolBar: QSImagePickerPhotosToolBar!
@@ -35,6 +39,7 @@ class QSImagePickerPhotosController: UIViewController {
 		PHPhotoLibrary.shared().register(self)
 		
 		selectedAssets.removeAll()
+		selectedAssetArray.removeAll()
 		
 		let flowLayout = UICollectionViewFlowLayout()
 		flowLayout.scrollDirection = .vertical
@@ -48,6 +53,9 @@ class QSImagePickerPhotosController: UIViewController {
 		view.addSubview(collectionView)
 		
 		toolBar = QSImagePickerPhotosToolBar.newInstance()
+		toolBar.doneCallBack = {
+			[weak self] in self?.done()
+		}
 		view.addSubview(toolBar)
 		
 		collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,6 +93,48 @@ class QSImagePickerPhotosController: UIViewController {
 
 	@objc private func cancelButtonClick() {
 		imagePicker?.dismiss(completion: nil)
+	}
+	
+	
+	/// 完成
+	private func done() {
+		imagePicker?.startDoneLoading()
+		
+		DispatchQueue.global().async {
+			[weak self] in self?.readSelectedImages()
+		}
+	}
+	
+	private func readSelectedImages() {
+		let options = PHImageRequestOptions()
+		options.deliveryMode = .highQualityFormat
+		options.isSynchronous = true
+		options.isNetworkAccessAllowed = true
+		options.resizeMode = .fast
+		
+		var images = [UIImage]()
+		for asset in selectedAssetArray {
+			imageManager.requestImage(for: asset, targetSize: CGSize(width: compressImageMaxWidth, height: compressImageMaxHeight), contentMode: .aspectFit, options: options, resultHandler: { image, _ in
+				if let image = image {
+					print(image)
+					images.append(image)
+				}
+			})
+		}
+		
+		DispatchQueue.main.async {
+			[weak self] in
+			self?.readSelectedImagesSuccess(images: images)
+		}
+	}
+	
+	private func readSelectedImagesSuccess(images: [UIImage]) {
+		imagePicker?.stopDoneLoading()
+		if let imagePicker = imagePicker {
+			imagePicker.dismiss(completion: {
+				imagePicker.delegate?.imagePicker?(imagePicker: imagePicker, didFinishedSelectImages: images)
+			})
+		}
 	}
 	
 	deinit {
@@ -126,11 +176,42 @@ extension QSImagePickerPhotosController: UICollectionViewDelegate, UICollectionV
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let asset = phAssets.object(at: indexPath.item)
+		guard asset.disable == false else {
+			//视频和live 图片不能选择
+			return
+		}
+		
+		let options = PHImageRequestOptions()
+		options.deliveryMode = .highQualityFormat
+		options.isNetworkAccessAllowed = true
+		options.resizeMode = .fast
+
+		
 		if selectedAssets[asset] == nil {
+			if selectedAssets.count >= maxCount {
+				let alert = UIAlertController(title: "温馨提醒", message: "最多只能选取\(maxCount)张图片哦", preferredStyle: .alert, items: UIAlertItem(title: "确定"))
+				self.present(alert, animated: true, completion: nil)
+				return
+			}
 			selectedAssets[asset] = true
+			selectedAssetArray.append(asset)
+			
+			imageManager.startCachingImages(for: [asset], targetSize: CGSize(width: compressImageMaxWidth, height: compressImageMaxHeight), contentMode: .aspectFit, options: options)
 		}
 		else {
 			selectedAssets[asset] = nil
+			
+			var findIndex = -1
+			for (index, oneAsset) in selectedAssetArray.enumerated() {
+				if asset === oneAsset {
+					findIndex = index
+					break
+				}
+			}
+			if findIndex != -1 {
+				selectedAssetArray.remove(at: findIndex)
+				imageManager.stopCachingImages(for: [asset], targetSize: CGSize(width: compressImageMaxWidth, height: compressImageMaxHeight), contentMode: .aspectFit, options: options)
+			}
 		}
 		
 		collectionView.reloadData()

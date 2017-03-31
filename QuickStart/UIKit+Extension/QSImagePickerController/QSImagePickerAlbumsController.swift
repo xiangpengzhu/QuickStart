@@ -20,10 +20,12 @@ struct QSImagePickerAlbumItem {
 /// 相册列表
 class QSImagePickerAlbumsController: UIViewController {
 
+	var maxCount: Int = 0
+	var compressImageMaxWidth: CGFloat = 0
+	var compressImageMaxHeight: CGFloat = 0
+	
 	fileprivate weak var imagePicker: QSImagePickerController?
-	
 	fileprivate var tableView: UITableView!
-	
 	fileprivate lazy var albumItems = [QSImagePickerAlbumItem]()
 	fileprivate let imageManager = PHCachingImageManager()
 	
@@ -165,6 +167,9 @@ extension QSImagePickerAlbumsController: UITableViewDataSource, UITableViewDeleg
 			photosList.phAssets = album.phAssets
 			photosList.title = album.name
 			photosList.imagePicker = self.imagePicker
+			photosList.maxCount = maxCount
+			photosList.compressImageMaxHeight = compressImageMaxHeight
+			photosList.compressImageMaxWidth = compressImageMaxWidth
 			self.navigationController?.pushViewController(photosList, animated: true)
 		}
 	}
