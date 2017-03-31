@@ -50,6 +50,7 @@ class QSImagePickerPhotosController: UIViewController {
 		
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
 		collectionView.backgroundColor = UIColor.white
+		collectionView.alwaysBounceVertical = true
 		view.addSubview(collectionView)
 		
 		toolBar = QSImagePickerPhotosToolBar.newInstance()
