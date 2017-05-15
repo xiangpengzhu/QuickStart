@@ -8,50 +8,77 @@
 
 import Foundation
 
+
 /*
- 自动解析类json object 的类
+自动解析类json object 的类
+
+
+let dic: [String : Any] = [
+	"code": 0,
+	"msg": "success",
+	"doubleValue": 3.14159265,
+	"floatValue": 3.14,
+	"data": [
+		[
+			"name": "zxp",
+			"age": 10
+		],
+		[
+			"name": "ttt",
+			"age": 12
+		],
+	],
+	"person": [
+		"name": "ttt",
+		"age": 12
+	],
+	"dic_info": [
+		"key": "value",
+		"1": [
+			[
+				"id": "1",
+				"name": "xx",
+				],
+			[
+				"id": "2",
+				"name": "xxx",
+				],
+		]
+	],
+	"products": [
+		[
+			"id": "1",
+			"name": "xx",
+			],
+		[
+			"id": "2",
+			"name": "xxx",
+			],
+	]
+]
+
+
+
+class ResponseData: QSDictionaryAutoParseModel {
  
- 例子：
- let dic: [String : Any] = [
-    "code": 0,
-    "msg": "success",
-    "doubleValue": 3.14159265,
-    "floatValue": 3.14,
-    "data": [
-        [
-            "name": "zxp",
-            "age": 10
-        ],
-        [
-            "name": "ttt",
-            "age": 12
-        ],
-        ],
-    "person": [
-            "name": "ttt",
-            "age": 12
-    ],
- ]
+	private(set) var code: Int = 0
+	private(set) var doubleValue: Double = 0.0
+	private(set) var floatValue: Float = 0.0
  
+	private(set) var msg = ""
+	private(set) var data = [Person]()
  
- 
- class ResponseData: QSDictionaryAutoParseModel {
- 
-    private(set) var code: Int = 0
-    private(set) var doubleValue: Double = 0.0
-    private(set) var floatValue: Float = 0.0
- 
-    private(set) var msg = ""
-    private(set) var data = [Person]()
- 
-    private(set) var person = Person()
- }
- 
- class Person: QSDictionaryAutoParseModel {
-    var name = ""
-    var age = 0
- }
- 
+	private(set) var person = Person()
+	private(set) var dic_info = NSDictionary()
+	private(set) var products = [NSDictionary]()
+}
+
+class Person: QSDictionaryAutoParseModel {
+	var name = ""
+	var age = 0
+}
+
+
  let resp = ResponseData()
  let result = resp.parse(fromJsonObject: dic) { type in
     if type == "Person" {
@@ -134,12 +161,19 @@ open class QSDictionaryAutoParseModel: NSObject {
                     break
                     
                 default:
-                    if let model = typeGenerator?(childType), let modelDic = dic[label] {
-                        if model.parse(fromJsonObject: modelDic, typeGenerator: typeGenerator) {
-                            self.setValue(model, forKey: label)
-                        }
-                    }
-                    
+					if let modelDic = dic[label] {
+						if let model = typeGenerator?(childType) {
+							//解析类
+							if model.parse(fromJsonObject: modelDic, typeGenerator: typeGenerator) {
+								self.setValue(model, forKey: label)
+							}
+						}
+						else if (childType.hasPrefix("Dictionary") || childType == "NSDictionary"), let modelDic = modelDic as? NSDictionary {
+							//解析字典
+							self.setValue(modelDic, forKey: label)
+						}
+					}
+					
                     break
                 }
             }
@@ -175,6 +209,9 @@ open class QSDictionaryAutoParseModel: NSObject {
                         return model
                     }
                 }
+				else if (elementType.hasPrefix("Dictionary") || elementType == "NSDictionary"), let obj = obj as? NSDictionary {
+					return obj
+				}
                 return nil
             }
         }

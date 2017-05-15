@@ -9,39 +9,80 @@
 import UIKit
 import QuickStart
 
-class ViewController: UIViewController, QSImagePickerControllerDelegate {
+let dic: [String : Any] = [
+	"code": 0,
+	"msg": "success",
+	"doubleValue": 3.14159265,
+	"floatValue": 3.14,
+	"data": [
+		[
+			"name": "zxp",
+			"age": 10
+		],
+		[
+			"name": "ttt",
+			"age": 12
+		],
+	],
+	"person": [
+		"name": "ttt",
+		"age": 12
+	],
+	"dic_info": [
+		"key": "value",
+		"1": [
+			[
+				"id": "1",
+				"name": "xx",
+			],
+			[
+				"id": "2",
+				"name": "xxx",
+			],
+		]
+	],
+	"products": [
+		[
+			"id": "1",
+			"name": "xx",
+			],
+		[
+			"id": "2",
+			"name": "xxx",
+		],
+	]
+]
 
-	@IBOutlet weak private var button: UIButton!
-    
+
+
+class ResponseData: QSDictionaryAutoParseModel {
+ 
+	private(set) var code: Int = 0
+	private(set) var doubleValue: Double = 0.0
+	private(set) var floatValue: Float = 0.0
+ 
+	private(set) var msg = ""
+	private(set) var data = [Person]()
+ 
+	private(set) var person = Person()
+	private(set) var dic_info = NSDictionary()
+	private(set) var products = [NSDictionary]()
+}
+
+class Person: QSDictionaryAutoParseModel {
+	var name = ""
+	var age = 0
+}
+
+
+class ViewController: UIViewController, QSImagePickerControllerDelegate {
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
-	}
-	
-	func buttonClick() {
-		let imagePicker = QSImagePickerController()
-		imagePicker.delegate = self
-		imagePicker.maxCount = 5
-		imagePicker.compressImageMaxHeight = 10000
-		imagePicker.compressImageMaxWidth = 10000
-		imagePicker.show(inViewController: self)
-	}
-
-	func imagePicker(imagePicker: QSImagePickerController, didFinishedSelectImages images: [UIImage]) {
-		
-		let documents = SandboxDirectoryManager.documentDirectory()
-		
-		for (index, image) in images.enumerated() {
-			guard let path = documents?.appendingPathComponent("\(index).jpg") else {
-				continue
-			}
-			let data = UIImageJPEGRepresentation(image, 1.0)
-			let url = URL(fileURLWithPath: path)
-			do {
-				try data?.write(to: url)
-			}
-			catch {}
+		let resp = ResponseData()
+		if resp.parse(fromJsonObject: dic) {
+			print(resp)
 		}
 	}
 }
