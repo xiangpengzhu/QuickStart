@@ -102,7 +102,7 @@ open class QSDictionaryAutoParseModel: NSObject {
      obj 需要解析的jsonObject
      typeGenerator 类型生成器，根据一个自定义类型的字符串，返回一个这个自定义类型的实例
     */
-    public func parse(fromJsonObject obj: Any?, typeGenerator: ((String) -> QSDictionaryAutoParseModel?)? = nil) -> Bool {
+    open func parse(fromJsonObject obj: Any?, typeGenerator: ((String) -> QSDictionaryAutoParseModel?)? = nil) -> Bool {
         guard let dic = obj as? NSDictionary else {
             return false
         }
