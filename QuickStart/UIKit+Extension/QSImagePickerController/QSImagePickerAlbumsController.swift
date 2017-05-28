@@ -27,8 +27,10 @@ class QSImagePickerAlbumsController: UIViewController {
 	fileprivate weak var imagePicker: QSImagePickerController?
 	fileprivate var tableView: UITableView!
 	fileprivate lazy var albumItems = [QSImagePickerAlbumItem]()
-	fileprivate let imageManager = PHCachingImageManager()
+    fileprivate var imageManager: PHCachingImageManager?
 	
+    fileprivate var registeredObserver = false
+    
 	init(withImagePicker imagePicker: QSImagePickerController) {
 		super.init(nibName: nil, bundle: nil)
 		self.imagePicker = imagePicker
@@ -44,9 +46,7 @@ class QSImagePickerAlbumsController: UIViewController {
 		view.backgroundColor = UIColor.white
 		title = "照片"
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancelButtonClick))
-		PHPhotoLibrary.shared().register(self)
-		readAlbumsData()
-		
+        
 		tableView = UITableView(frame: CGRect.zero, style: .plain)
 		view.addSubview(tableView)
 		
@@ -63,11 +63,63 @@ class QSImagePickerAlbumsController: UIViewController {
 		
 		tableView.dataSource = self
 		tableView.delegate = self
+        
+        requestAuthorization()
 	}
+    
+    fileprivate func requestAuthorization() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization {
+                [weak self] status in
+                switch status {
+                case .notDetermined:
+                    break
+                    
+                case .restricted, .denied:
+                    self?.showDenyMessage()
+                    
+                case .authorized:
+                    self?.registerObserver()
+                    
+                }
+            }
+        
+        case .restricted, .denied:
+            showDenyMessage()
+            
+        case .authorized:
+            registerObserver()
+            readAlbumsData()
+        }
+    }
+    
+    fileprivate func showDenyMessage() {
+        let alert = UIAlertController(title: "温馨提醒", message: "您关闭了相册访问权限，请去设置中开启", preferredStyle: .alert, items: UIAlertItem(title: "确定"))
+        self.present(alert, animated: true, completion: nil)
+    }
 	
-	
+    fileprivate func registerObserver() {
+        guard registeredObserver == false else {
+            return
+        }
+        
+        PHPhotoLibrary.shared().register(self)
+        registeredObserver = true
+    }
+    
+    fileprivate func unRegisterObserver() {
+        guard registeredObserver else {
+            return
+        }
+        
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
+        registeredObserver = false
+    }
+    
 	fileprivate func readAlbumsData() {
-		
+		imageManager = PHCachingImageManager()
 		albumItems.removeAll()
 		
 		var allPhotosAlbumItem: QSImagePickerAlbumItem?
@@ -114,7 +166,7 @@ class QSImagePickerAlbumsController: UIViewController {
 		let phAssets = albumItems.map { $0.phAssets.firstObject! }
 		let reqOptions = PHImageRequestOptions()
 		reqOptions.isNetworkAccessAllowed = true
-		imageManager.startCachingImages(for: phAssets, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: reqOptions)
+		imageManager?.startCachingImages(for: phAssets, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: reqOptions)
 	}
 	
 	
@@ -123,7 +175,7 @@ class QSImagePickerAlbumsController: UIViewController {
 	}
 	
 	deinit {
-		PHPhotoLibrary.shared().unregisterChangeObserver(self)
+        unRegisterObserver()
 	}
 }
 
@@ -143,7 +195,7 @@ extension QSImagePickerAlbumsController: UITableViewDataSource, UITableViewDeleg
 			cell.representedAssetIdentifier = albumItem.phAssets.firstObject!.localIdentifier
 			cell.nameL.text = albumItem.name
 			cell.countL.text = "(\(albumItem.count))"
-			imageManager.requestImage(for: albumItem.phAssets.firstObject!, targetSize:CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+			imageManager?.requestImage(for: albumItem.phAssets.firstObject!, targetSize:CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
 				if cell.representedAssetIdentifier == albumItem.phAssets.firstObject!.localIdentifier {
 					cell.imageV.image = image
 				}
