@@ -63,9 +63,15 @@ class QSImagePickerPhotosController: UIViewController {
 		toolBar.translatesAutoresizingMaskIntoConstraints = false
 		
 		var constraints = [NSLayoutConstraint]()
-		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[collectionView]|", options: .alignAllBottom, metrics: nil, views: ["collectionView": collectionView, "toolBar": toolBar]))
-		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|[toolBar]|", options: .alignAllBottom, metrics: nil, views: ["collectionView": collectionView, "toolBar": toolBar]))
-		constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|[collectionView][toolBar(44)]|", options: .alignAllLeft, metrics: nil, views: ["collectionView": collectionView, "toolBar": toolBar]))
+		constraints.append(NSLayoutConstraint(item: toolBar, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
+		constraints.append(NSLayoutConstraint(item: toolBar, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0))
+		constraints.append(NSLayoutConstraint(item: toolBar, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0))
+		constraints.append(NSLayoutConstraint(item: toolBar, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 0, constant: 44))
+		
+		constraints.append(NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0))
+		constraints.append(NSLayoutConstraint(item: collectionView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0))
+		constraints.append(NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0))
+		constraints.append(NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: toolBar, attribute: .top, multiplier: 1, constant: 0))
 		view.addConstraints(constraints)
 		
 		let frameworkBundleID = "com.kxsq.QuickStart"
