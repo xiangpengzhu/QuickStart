@@ -123,7 +123,7 @@
 				TargetAttributes = {
 					A93F11A41D8B8B2900F688A4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 353FJNBYW5;
+						DevelopmentTeam = T3Z5YAN46J;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -295,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 353FJNBYW5;
+				DEVELOPMENT_TEAM = T3Z5YAN46J;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xpz.Example.3;
@@ -311,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 353FJNBYW5;
+				DEVELOPMENT_TEAM = T3Z5YAN46J;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xpz.Example.3;

@@ -97,7 +97,6 @@
 		691400B51D929BE50039F56F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6951FF141DCC736700786CB9 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		696A60631DE6E151002AFA80 /* QSVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSVerticalButton.swift; sourceTree = "<group>"; };
-		696C21D51D8E398D0056F2D3 /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		696C21EA1D8E45190056F2D3 /* TouchEdgeViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchEdgeViews.swift; sourceTree = "<group>"; };
 		699AB7D91E8BC43900A6E365 /* QSImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerController.swift; sourceTree = "<group>"; };
 		699AB7DB1E8BC53E00A6E365 /* QSImagePickerAlbumsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePickerAlbumsController.swift; sourceTree = "<group>"; };
@@ -163,17 +162,8 @@
 		696C21D31D8E398D0056F2D3 /* SystemModules */ = {
 			isa = PBXGroup;
 			children = (
-				696C21D41D8E398D0056F2D3 /* CommonCrypto */,
 			);
 			path = SystemModules;
-			sourceTree = "<group>";
-		};
-		696C21D41D8E398D0056F2D3 /* CommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				696C21D51D8E398D0056F2D3 /* module.map */,
-			);
-			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
 		696C21E91D8E44F70056F2D3 /* SystemOverride */ = {

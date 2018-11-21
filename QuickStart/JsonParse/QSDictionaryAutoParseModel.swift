@@ -150,7 +150,8 @@ open class QSDictionaryAutoParseModel: NSObject {
                         let startIndex = preRange.upperBound
                         let endIndex = sufRange.lowerBound
                         
-                        let eleType = type.substring(with: Range<String.Index>(startIndex..<endIndex))
+                        let range = Range<String.Index>(uncheckedBounds: (startIndex, endIndex))
+                        let eleType = type.substring(with: range)
                         if let originArray = dic[label] as? Array<Any> {
                             if let arrayValue = parse(fromArray: originArray, elementType: eleType, typeGenerator: typeGenerator) {
                                 self.setValue(arrayValue, forKey: label)
